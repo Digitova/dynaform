@@ -5,17 +5,23 @@ const inputTypes = Object.assign({}, Inputs.default, InputGenerators.default)
 
 export default class Schema extends Component {
 
-	onChangeHandler = (text) => {
-		if (this.props.onChange) {
-			if (this.props.name) {
-				this.setState(Object.assign({}, this.state, {[this.props.name]: text}), () => {
-					this.props.onChange(this.state);
-				});
-			} else {
-				this.props.onChange(text);
-			}
-		}
-	}
+    constructor(props)
+    {
+        super(props)
+        this.state = typeof props.data == 'object' ? props.data : null
+    }
+
+    onChangeHandler = (text) => {
+        if (this.props.onChange) {
+            if (this.props.name) {
+                this.setState(Object.assign({}, this.state, {[this.props.name]: text}), () => {
+                    this.props.onChange(this.state);
+                });
+            } else {
+                this.props.onChange(text);
+            }
+        }
+    }
 
     render() {
         const {

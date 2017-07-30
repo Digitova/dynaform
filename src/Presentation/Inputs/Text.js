@@ -8,7 +8,7 @@ export default class extends Component {
             name,
             style,
             placeholder,
-            value,
+            data,
             dataType,
             validators,
             error,
@@ -25,6 +25,7 @@ export default class extends Component {
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={onChange}
+                defaultValue={data}
             />
         );
     }

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import Schema from './Container/InputGenerators/Schema';
+import { Text, View } from 'react-native';
 
-class Form extends Component {
-
+class Form extends Component
+{
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = typeof props.data == 'object' ? props.data : {}
     }
 
     onSubmitHandler = () => {
@@ -14,22 +15,28 @@ class Form extends Component {
         }
     }
 
-	onChange = (formData) => {
-		this.setState(Object.assign({},this.state,formData), () => {
-			if (this.props.onChange) {
-				this.props.onChange(this.state);
-			}
-		});
-	};
+    onChange = (formData) => {
+        this.setState(Object.assign({},this.state,formData), () => {
+            if (this.props.onChange) {
+                this.props.onChange(this.state);
+            }
+        });
+    }
 
     render() {
-        const { schema } = this.props;
+        const { schema, data } = this.props;
 
         return (
-            <Schema schema={schema}
-                    onChange={this.onChange}
-                    onSubmit={this.onSubmitHandler}
-            />
+            <View>
+                <Schema schema={schema}
+                        data={data}
+                        onChange={this.onChange}
+                        onSubmit={this.onSubmitHandler}
+                />
+                <Text>
+                    {JSON.stringify(this.state)}
+                </Text>
+            </View>
         );
     }
 }
