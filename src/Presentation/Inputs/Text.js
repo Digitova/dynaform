@@ -17,15 +17,15 @@ export default class extends Component {
             ...additionalProps,
         } = this.props
 
+        const mergedStyles = StyleSheet.flatten([Styles, style])
         return (
             <TextInput
                 {...additionalProps}
                 name={name}
-                style={Styles.TextInput}
+                style={mergedStyles.TextInput}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={onChange}
-                defaultValue={data}
             />
         );
     }

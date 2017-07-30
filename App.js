@@ -6,20 +6,20 @@ import testSchema from './tests/testSchema';
 export default class App extends React.Component {
   render() {
 
+    const predata = {
+        firstName: 'Hello',
+        lastName: 'World',
+        phoneNumber: 'State here :D',
+        subForm: {
+            firstName: 'Woot',
+            lastName: 'Woot',
+            phoneNumber: "That's the sound of the police!",
+        }
+    }
     return (
         <View>
           <StatusBar hidden={true} />
-          <Form schema={testSchema.basic}
-                data={{
-                    firstName: 'Hello',
-                    lastName: 'World',
-                    phoneNumber: 'State here :D',
-                    subForm: {
-                        firstName: 'Woot',
-                        lastName: 'Woot',
-                        phoneNumber: "That's the sound of the police!",
-                    }
-                }}/>
+          <Form schema={testSchema.basic} />
         </View>
     );
   }
