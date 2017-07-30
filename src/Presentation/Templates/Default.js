@@ -16,14 +16,29 @@ export default class extends React.Component {
         const InputType = this.props.inputType;
         return (
             <View style={Styles.View}>
-                <Title >{title}</Title>
-                <Subtitle>{subtitle}</Subtitle>
+                {this.renderTitle()}
+	            {this.renderSubtitle()}
                 <InputType {...this.props} />
-                <Helper>{helper}</Helper>
+                {this.renderHelper()}
                 {/*<Error styles={styles} {...error} />*/}
             </View>
         );
     }
+    renderTitle() {
+        if(this.props.title) {
+	        return <Title>{this.props.title}</Title>;
+        }
+    }
+	renderSubtitle() {
+		if(this.props.subtitle) {
+			return <Subtitle>{this.props.subtitle}</Subtitle>;
+		}
+	}
+	renderHelper() {
+		if(this.props.helper) {
+            return <Helper>{this.props.helper}</Helper>
+		}
+	}
 }
 
 const Styles = StyleSheet.create({
