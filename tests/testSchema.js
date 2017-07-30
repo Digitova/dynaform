@@ -3,20 +3,21 @@ export const basic = {
     properties: {
         "firstName": {
             dataType: "string",
+	        inputType: "text",
             placeholder: 'Please enter your first name',
             title: 'First Name',
             helper: 'Your first name, kind person!',
             required: true
         },
-        lastName: {
+        "lastName": {
             dataType: "string",
-            inputType: "textInput",
+            inputType: "text",
             title: 'Last Name',
             required: true,
         },
         "phoneNumber": {
             dataType: "string",
-            inputType: "textInput",
+            inputType: "text",
             validator: "phoneNumber",
         }
     }
