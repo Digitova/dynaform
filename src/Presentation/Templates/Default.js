@@ -14,7 +14,7 @@ export default class extends React.Component {
             <View>
                 <Title styles={styles}>{title}</Title>
                 <Subtitle styles={styles}>{subtitle}</Subtitle>
-                <fieldType {...this.props} />
+                <FieldType {...this.props} />
                 <Helper styles={styles}>{helper}</Helper>
                 <Error styles={styles} {...error} />
             </View>
