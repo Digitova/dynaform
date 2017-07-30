@@ -8,27 +8,26 @@ class Form extends Component {
         this.state = {}
     }
 
-    onChangeHandler = (name, value) => {
-        const oldState = Object.assign({}, this.state)
-        const newState = Object.assign({}, this.state)[name] = value
-        this.setState(newState)
-        if(typeof this.props.onChange == 'function') {
-            this.props.onChange(newState, oldState)
-        }
-    }
-
     onSubmitHandler = () => {
         if(typeof this.props.onSubmit == 'function') {
             this.props.onSubmit(this.state)
         }
     }
 
+	onChange = (formData) => {
+		this.setState(Object.assign({},this.state,formData), () => {
+			if (this.props.onChange) {
+				this.props.onChange(this.state);
+			}
+		});
+	};
+
     render() {
         const { schema } = this.props;
 
         return (
             <Schema schema={schema}
-                    onChange={this.onChangeHandler}
+                    onChange={this.onChange}
                     onSubmit={this.onSubmitHandler}
             />
         );

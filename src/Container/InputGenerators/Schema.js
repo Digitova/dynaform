@@ -4,6 +4,19 @@ import * as InputGenerators from './index'
 const inputTypes = Object.assign({}, Inputs.default, InputGenerators.default)
 
 export default class Schema extends Component {
+
+	onChangeHandler = (text) => {
+		if (this.props.onChange) {
+			if (this.props.name) {
+				this.setState(Object.assign({}, this.state, {[this.props.name]: text}), () => {
+					this.props.onChange(this.state);
+				});
+			} else {
+				this.props.onChange(text);
+			}
+		}
+	}
+
     render() {
         const {
             schema,
@@ -16,6 +29,7 @@ export default class Schema extends Component {
         return (
             <Template
                 {...additionalProps}
+                onChange={this.onChangeHandler}
                 inputType={InputType}
                 schema={schema}
                 title={schema.title}
@@ -31,7 +45,6 @@ export default class Schema extends Component {
     }
 
     getInputType(schema){
-        console.log([schema.inputType, inputTypes])
         return this.isSupportedInputType(schema.inputType, inputTypes) ? inputTypes[schema.inputType] : inputTypes.UnsupportedInput;
     }
 

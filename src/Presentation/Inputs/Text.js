@@ -3,14 +3,6 @@ import { TextInput, StyleSheet } from "react-native";
 
 export default class extends Component {
 
-    onChangeHandler = (text) => {
-        this.props.onChange(this.props.name, text)
-    }
-
-    onSubmitHandler = () => {
-        this.props.onSubmit()
-    }
-
     render() {
         const {
             name,
@@ -24,6 +16,7 @@ export default class extends Component {
             onSubmit,
             ...additionalProps,
         } = this.props
+
         return (
             <TextInput
                 {...additionalProps}
@@ -31,7 +24,7 @@ export default class extends Component {
                 style={Styles.TextInput}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
-                onChangeText={(text) => this.setState({text})}
+                onChangeText={onChange}
             />
         );
     }
