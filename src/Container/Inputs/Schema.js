@@ -9,7 +9,7 @@ const INPUT_TYPES = {
 class Schema extends React.Component {
 	render() {
 		const { schema } = this.props;
-		const inputs = require("../inputs").default;
+		const inputs = require("../Inputs").default;
 
 
 		const InputType = this.getInputType(schema,inputs);
