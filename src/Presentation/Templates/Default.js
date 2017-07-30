@@ -1,7 +1,6 @@
 import React from "react";
 import { View } from 'react-native';
-import Title from '../elements/Title'
-
+import Elements from '../Elements';
 export default class extends React.Component {
     render() {
         const {
