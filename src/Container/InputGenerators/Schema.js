@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { View } from "react-native";
-
+import * as Inputs from '../../Presentation/Inputs'
+import * as InputGenerators from './'
+const inputTypes = Object.assign({}, Inputs, InputGenerators)
 
 class Schema extends Component {
     render() {
@@ -30,9 +31,7 @@ class Schema extends Component {
     }
 
     getInputType(schema){
-        const inputs = require("../Inputs").default;
-
-        return this.isSupportedInputType(schema.inputType,inputs) ? inputs[schema.inputType] : inputs.UnsupportedInput;
+        return this.isSupportedInputType(schema.inputType, inputTypes) ? inputTypes[schema.inputType] : inputTypes.UnsupportedInput;
     }
 
     isSupportedInputType(inputName,inputs){

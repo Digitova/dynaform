@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Schema from './Container/Inputs/Schema';
+import Schema from './Container/InputGenerators/Schema';
 
 class Form extends Component {
 
