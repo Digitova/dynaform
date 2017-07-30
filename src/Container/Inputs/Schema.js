@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
+import { View } from "react-native";
+import Template from "../../Presentation/Templates/Default"
 
 const INPUT_TYPES = {
 	text: "Text",
@@ -6,7 +8,7 @@ const INPUT_TYPES = {
 	password: "Password",
 };
 
-class Schema extends React.Component {
+class Schema extends Component {
 	render() {
 		const { schema } = this.props;
 		const inputs = require("../Inputs").default;
@@ -15,7 +17,8 @@ class Schema extends React.Component {
 		const InputType = this.getInputType(schema,inputs);
 
 		return (
-			<InputType schema={schema}/>
+			//<View/>
+			<Template inputType={InputType} />
 		);
 	}
 

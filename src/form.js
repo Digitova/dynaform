@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import Schema from './Container/Inputs/Schema';
 
-class Form extends React.Component {
+class Form extends Component {
 	render() {
 		const { schema } = this.props;
 

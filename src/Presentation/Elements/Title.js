@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { View } from 'react-native';
 import Label from './Label';
 
-export default class extends React.Component {
+export default class extends Component {
     render() {
         const {styles, title} = this.props
         return (
