@@ -29,8 +29,8 @@ export const advanced = {
             type: "array",
             properties: {
                 id: {
-                    dataType: 'string',
-                    inputType: 'hidden',
+                    dataType: 'readOnly',
+                    value: 'testst',
                 },
                 "task": {
                     dataType: 'string',
