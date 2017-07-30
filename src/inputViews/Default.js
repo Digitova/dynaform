@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from 'react-native';
-import Elements from '../elements'
+import Title from '../elements/Title'
 
 export default class extends React.Component {
     render() {
@@ -15,9 +15,9 @@ export default class extends React.Component {
             <View>
                 <Title styles={styles}>{title}</Title>
                 <Subtitle styles={styles}>{subtitle}</Subtitle>
-                <fieldType ...this.props />
+                <fieldType {...this.props} />
                 <Helper styles={styles}>{helper}</Helper>
-                <Error styles={styles} ...error />
+                <Error styles={styles} {...error} />
             </View>
         );
     }
