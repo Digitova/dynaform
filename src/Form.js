@@ -9,7 +9,7 @@ class Form extends Component {
     }
 
     onChangeHandler = (name, value) => {
-        const newState = Object.assign({}, this.state)[name] = value
+        const newState = Object.assign({}, this.state, {[name]: value})
         this.setState(newState)
     }
 
