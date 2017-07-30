@@ -1,10 +1,12 @@
 import React from "react";
-import Text from './inputs/Text';
+import Schema from './inputs/Schema';
 
 class Form extends React.Component {
 	render() {
+		const { schema } = this.props;
+
 		return (
-			<Text></Text>
+			<Schema schema={schema}></Schema>
 		);
 	}
 }
