@@ -1,12 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import Form from './src/form'
 
 export default class App extends React.Component {
   render() {
     return (
-      <Form schema="{ type: 'asdfa' }">
-      </Form>
+        <View>
+          <StatusBar hidden="true" />
+          <Form schema="{ type: 'asdfa' }">\
+          </Form>
+        </View>
     );
   }
 }
