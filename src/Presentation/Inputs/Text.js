@@ -25,7 +25,6 @@ export default class extends Component {
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={onChange}
-                defaultValue={data}
             />
         );
     }

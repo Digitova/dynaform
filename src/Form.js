@@ -29,7 +29,7 @@ class Form extends Component
         return (
             <View>
                 <Schema schema={schema}
-                        data={data}
+                        data={typeof data == 'object' ? data : {}}
                         onChange={this.onChange}
                         onSubmit={this.onSubmitHandler}
                 />
