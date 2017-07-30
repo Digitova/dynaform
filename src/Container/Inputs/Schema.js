@@ -21,9 +21,8 @@ class Schema extends Component {
 
 	getInputType(schema){
 		const inputs = require("../Inputs").default;
-		const inputName = INPUT_TYPES[schema.inputType];
 
-		return  this.isSupportedInputType(inputName,inputs) ? inputs[inputName] : inputs.UnsupportedInput;
+		return this.isSupportedInputType(schema.inputType,inputs) ? inputs[schema.inputType] : inputs.UnsupportedInput;
 	}
 
 	isSupportedInputType(inputName,inputs){

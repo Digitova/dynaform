@@ -4,8 +4,8 @@ import ObjectType from "./ObjectType";
 import UnsupportedInput from "./UnsupportedInput";
 
 export default {
-	Text,
-	Password,
-	ObjectType,
+	"text": Text,
+	"password:": Password,
+	"object": ObjectType,
 	UnsupportedInput
 };
