@@ -19,7 +19,7 @@ export default class App extends React.Component {
     return (
         <View>
           <StatusBar hidden={true} />
-          <Form schema={testSchema.basic} />
+          <Form schema={testSchema.basic} data={predata} />
         </View>
     );
   }

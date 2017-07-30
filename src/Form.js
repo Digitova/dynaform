@@ -39,9 +39,6 @@ export default class extends Component
                     onSubmit={this.onSubmitHandler}
                     onChange={this.onChange}
                 />
-                <Text>
-                    {JSON.stringify(this.state)}
-                </Text>
             </View>
         );
     }

@@ -18,7 +18,7 @@ export default class extends Component
         return (
             <Switch
                 style={style}
-                
+                defaultValue={!!data}
                 disabled={!!disabled}
                 onValueChange={onValueChangeHandler}
                 {...additionalProps}
