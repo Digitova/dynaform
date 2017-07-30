@@ -1,0 +1,5 @@
+dependencies: \
+  /Users/anthony/dev/DynamicInputs/node_modules/react-native/ReactCommon/cxxreact/JSCMemory.cpp \
+  /Users/anthony/dev/DynamicInputs/node_modules/react-native/ReactCommon/cxxreact/JSCMemory.h \
+  /Users/anthony/dev/DynamicInputs/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/anthony/dev/DynamicInputs/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h
