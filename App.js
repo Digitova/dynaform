@@ -7,8 +7,7 @@ export default class App extends React.Component {
     return (
         <View>
           <StatusBar hidden="true" />
-          <Form schema="{ type: 'asdfa' }">\
-          </Form>
+          <Form schema="{ type: 'asdfa' }" />
         </View>
     );
   }
