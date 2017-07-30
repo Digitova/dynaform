@@ -11,18 +11,20 @@ const INPUT_TYPES = {
 class Schema extends Component {
 	render() {
 		const { schema } = this.props;
+		const inputs = require("../Inputs").default;
+		const inputTypeName = INPUT_TYPES[schema.inputType];
 
-		const InputType = this.getInputType(schema);
 
+		const InputType = this.getInputType(inputTypeName,inputs);
 		return (
-			<Template inputType={InputType} schema={schema} />
+			<Template
+				schema={schema}
+				inputType={InputType}
+	            inputTypeName={inputTypeName} />
 		);
 	}
 
-	getInputType(schema){
-		const inputs = require("../Inputs").default;
-		const inputName = INPUT_TYPES[schema.inputType];
-
+	getInputType(inputName,inputs){
 		return  this.isSupportedInputType(inputName,inputs) ? inputs[inputName] : inputs.UnsupportedInput;
 	}
 

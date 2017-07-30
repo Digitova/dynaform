@@ -5,7 +5,7 @@ export default class extends Component {
 	render() {
 		const {
 			name,
-			styles,
+			style,
 			placeholder,
 			value,
 			dataType,
@@ -19,7 +19,7 @@ export default class extends Component {
             <TextInput
 				{...additionalProps}
                 name={name}
-                style={styles}
+                style={style}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={(text) => this.setState({text})}
