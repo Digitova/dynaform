@@ -17,7 +17,7 @@ class Form extends Component {
         const { schema } = this.props;
 
         return (
-            <Schema schema={schema} onChange={this.onChangeHandler}></Schema>
+            <Schema schema={schema} onChange={this.onChangeHandler} />
         );
     }
 }
