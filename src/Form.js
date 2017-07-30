@@ -3,6 +3,11 @@ import Schema from './Container/Inputs/Schema';
 
 class Form extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
+
     onChangeHandler = (name, value) => {
         const newState = Object.assign({}, this.state)[name] = value
         this.setState(newState)
