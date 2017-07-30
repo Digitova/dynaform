@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TextInput } from "react-native";
 
-export default class Text extends Component {
+export default class extends Component {
 	render() {
 		const {
 			name,
