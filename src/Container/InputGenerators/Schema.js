@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as Inputs from '../../Presentation/Inputs'
-import * as InputGenerators from './'
+import * as InputGenerators from './index'
 const inputTypes = Object.assign({}, Inputs, InputGenerators)
 
 class Schema extends Component {

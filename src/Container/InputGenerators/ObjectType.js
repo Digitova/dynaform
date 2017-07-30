@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, TextInput } from "react-native";
-import Schema from './/Schema'
+import Schema from './Schema'
 
 export default class extends Component {
 	render() {
