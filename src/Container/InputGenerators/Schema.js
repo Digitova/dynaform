@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as Inputs from '../../Presentation/Inputs'
 import * as InputGenerators from './index'
-const inputTypes = Object.assign({}, Inputs, InputGenerators)
+const inputTypes = Object.assign({}, Inputs.default, InputGenerators.default)
 
 class Schema extends Component {
     render() {
@@ -31,6 +31,7 @@ class Schema extends Component {
     }
 
     getInputType(schema){
+        console.log([schema.inputType, inputTypes])
         return this.isSupportedInputType(schema.inputType, inputTypes) ? inputTypes[schema.inputType] : inputTypes.UnsupportedInput;
     }
 
