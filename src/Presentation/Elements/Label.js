@@ -1,11 +1,14 @@
 import React from "react";
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 export default class extends React.Component {
     render() {
-        const {styles} = this.props
+        const {style} = this.props
+
         return (
-            <View styles={styles}>{this.props.children}</View>
+            <View style={style}>
+                <Text>{this.props.children}</Text>
+            </View>
         );
     }
 }

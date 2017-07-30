@@ -1,6 +1,8 @@
 import React from "react";
 import { View } from 'react-native';
-import Elements from '../Elements';
+import Title from '../Elements/Title';
+import Subtitle from '../Elements/Subtitle';
+import Helper from '../Elements/Subtitle';
 import Styles from '../../styles'
 
 export default class extends React.Component {
@@ -15,14 +17,12 @@ export default class extends React.Component {
         } = this.props;
 
         const InputType = this.props.inputType;
-
-        console.log(Styles[inputTypeName])
         return (
             <View>
-                {/*<Title styles={styles}>{title}</Title>*/}
-                {/*<Subtitle styles={styles}>{subtitle}</Subtitle>*/}
+                <Title style={Styles[inputTypeName]} >{title}</Title>
+                <Subtitle style={Styles[inputTypeName]}>{subtitle}</Subtitle>
                 <InputType {...this.props} style={Styles[inputTypeName]} />
-                {/*<Helper styles={styles}>{helper}</Helper>*/}
+                <Helper style={Styles[inputTypeName]}>{helper}</Helper>
                 {/*<Error styles={styles} {...error} />*/}
             </View>
         );

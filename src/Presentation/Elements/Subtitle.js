@@ -4,9 +4,10 @@ import Label from './Label';
 
 export default class extends React.Component {
     render() {
-        const {styles, subtitle} = this.props
+        const {style} = this.props
+
         return (
-            <Label styles={styles}>{subtitle}</Label>
+            <Label style={style}>{this.props.children}</Label>
         );
     }
 }

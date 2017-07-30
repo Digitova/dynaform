@@ -14,6 +14,8 @@ class Schema extends Component {
 				inputType={InputType}
 				schema={schema}
 			    title={schema.title}
+			    subtitle={schema.subtitle}
+			    helper={schema.helper}
 			/>
 		);
 	}
