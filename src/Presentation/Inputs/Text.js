@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextInput } from "react-native";
+import { TextInput, StyleSheet } from "react-native";
 
 export default class extends Component {
 
@@ -28,7 +28,7 @@ export default class extends Component {
             <TextInput
                 {...additionalProps}
                 name={name}
-                style={style}
+                style={Styles.TextInput}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={(text) => this.setState({text})}
@@ -36,3 +36,12 @@ export default class extends Component {
         );
     }
 }
+
+const Styles = StyleSheet.create({
+    TextInput: {
+        borderRadius: 1,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: '#CCC',
+        paddingHorizontal: 5
+    }
+})
