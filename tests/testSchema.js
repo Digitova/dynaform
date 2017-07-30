@@ -19,33 +19,9 @@ export const basic = {
         "phoneNumber": {
             dataType: "string",
             inputType: "text",
+	        title: 'Phone Number',
             validator: "phoneNumber",
-        },
-	    "subForm": {
-		    inputType: "object",
-		    properties: {
-			    "firstName": {
-				    dataType: "string",
-				    inputType: "text",
-				    placeholder: 'Please enter your first name',
-				    title: 'First Name',
-				    subtitle:'What yo name?',
-				    helper: 'Your first name, kind person!',
-				    required: true
-			    },
-			    "lastName": {
-				    dataType: "string",
-				    inputType: "text",
-				    title: 'Last Name',
-				    required: true,
-			    },
-			    "phoneNumber": {
-				    dataType: "string",
-				    inputType: "text",
-				    validator: "phoneNumber",
-			    }
-		    }
-	    }
+        }
     }
 }
 
