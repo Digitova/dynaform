@@ -53,6 +53,7 @@ project.xcworkspace
 /build/
 /android/app/build/
 /android/app/gradle/
+/android/.gradle/
 /android/app/gradlew
 /android/app/gradlew.bat
 /android/build/
