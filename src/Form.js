@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import Schema from './Container/InputGenerators/Schema';
+import Schema from './Container/InputGenerators/Schema.js';
 import { Text, View } from 'react-native';
 
-class Form extends Component
+export default class extends Component
 {
     constructor(props) {
         super(props)
-        this.state = typeof props.data == 'object' ? props.data : {}
+        this.state = {
+            data: props.data ? props.data : {},
+        }
     }
 
     onSubmitHandler = () => {
@@ -15,10 +17,13 @@ class Form extends Component
         }
     }
 
-    onChange = (formData) => {
-        this.setState(Object.assign({},this.state,formData), () => {
+    onChange = (data) => {
+        const newState = Object.assign({}, this.state)
+        newState.data = data
+        // newState.arr.push(data ? data : 'No data passed in')
+        this.setState(newState, () => {
             if (this.props.onChange) {
-                this.props.onChange(this.state);
+                this.props.onChange(this.state.data)
             }
         });
     }
@@ -28,10 +33,11 @@ class Form extends Component
 
         return (
             <View>
-                <Schema schema={schema}
-                        data={typeof data == 'object' ? data : {}}
-                        onChange={this.onChange}
-                        onSubmit={this.onSubmitHandler}
+                <Schema
+                    schema={schema}
+                    data={typeof data == 'object' ? data : {}}
+                    onSubmit={this.onSubmitHandler}
+                    onChange={this.onChange}
                 />
                 <Text>
                     {JSON.stringify(this.state)}
@@ -40,6 +46,3 @@ class Form extends Component
         );
     }
 }
-
-
-export default Form;

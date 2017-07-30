@@ -1,10 +1,30 @@
 import React, { Component } from "react";
-import { View, TextInput } from "react-native";
+import { View, Text } from "react-native";
 import Schema from './Schema'
 
 export default class extends Component {
+    constructor(props)
+    {
+        super(props)
+        this.state = {
+            data: {}
+        }
+    }
+
+    onChangeHandler = (name, data) => {
+        const newState = Object.assign({}, this.state)
+        newState.data[name] = data
+        this.setState(newState, () => {
+            if(this.props.name) {
+                this.props.onChange(this.props.name, this.state.data);
+            } else {
+                this.props.onChange(this.state.data);
+            }
+        });
+    }
+
     render() {
-        const { schema, onChange, data } = this.props;
+        const { schema, data } = this.props;
         const properties = Object.keys(schema.properties);
 
         return (
@@ -16,7 +36,7 @@ export default class extends Component {
                             data={data && data[name] ? data[name] : null}
                             key={index}
                             name={name}
-                            onChange={onChange}
+                            onChange={this.onChangeHandler}
                         />
                     );
                 })}

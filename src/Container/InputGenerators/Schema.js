@@ -8,19 +8,23 @@ export default class Schema extends Component {
     constructor(props)
     {
         super(props)
-        this.state = typeof props.data == 'object' ? props.data : null
+        this.state = {
+            data: props.data ? props.data : null
+        }
     }
 
-    onChangeHandler = (text) => {
-        if (this.props.onChange) {
-            if (this.props.name) {
-                this.setState(Object.assign({}, this.state, {[this.props.name]: text}), () => {
-                    this.props.onChange(this.state);
-                });
+    onChangeHandler() {
+        const name = arguments[1] ? arguments[0] : null
+        const data = name ? arguments[1] : arguments[0]
+        const newState = Object.assign({}, this.state)
+        newState.data = data.data ? data.data : data
+        this.setState(newState, () => {
+            if(this.props.name) {
+                this.props.onChange(this.props.name, this.state.data);
             } else {
-                this.props.onChange(text);
+                this.props.onChange(this.state.data)
             }
-        }
+        });
     }
 
     render() {
@@ -35,7 +39,7 @@ export default class Schema extends Component {
         return (
             <Template
                 {...additionalProps}
-                onChange={this.onChangeHandler}
+                onChange={this.onChangeHandler.bind(this)}
                 inputType={InputType}
                 schema={schema}
                 title={schema.title}
