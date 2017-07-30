@@ -5,7 +5,7 @@ export default class extends Component
 {
 
     onValueChangeHandler = (value) => {
-        this.props.onChange(value)
+        this.props.onChange(this.props.name, value)
     }
 
     render() {
