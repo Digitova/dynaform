@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { View } from 'react-native';
 import Label from './Label';
 
 export default class extends Component {
     render() {
-        const {styles, title} = this.props
+        const {style} = this.props
+
         return (
-            <Label styles={styles}>{title}</Label>
+            <Label style={style}>{this.props.children}</Label>
         );
     }
 }

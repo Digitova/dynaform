@@ -6,6 +6,7 @@ export const basic = {
 	        inputType: "text",
             placeholder: 'Please enter your first name',
             title: 'First Name',
+            subtitle:'What yo name?',
             helper: 'Your first name, kind person!',
             required: true
         },
