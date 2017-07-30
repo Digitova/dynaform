@@ -5,6 +5,7 @@ import Elements from '../Elements';
 export default class extends React.Component {
     render() {
         const {
+            schema,
             title,
             subtitle,
             helper,
