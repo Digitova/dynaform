@@ -28,16 +28,19 @@ export default class extends React.Component {
         if(this.props.title) {
 	        return <Title>{this.props.title}</Title>;
         }
+	    return null;
     }
 	renderSubtitle() {
 		if(this.props.subtitle) {
 			return <Subtitle>{this.props.subtitle}</Subtitle>;
 		}
+		return null;
 	}
 	renderHelper() {
 		if(this.props.helper) {
             return <Helper>{this.props.helper}</Helper>
 		}
+		return null;
 	}
 }
 
