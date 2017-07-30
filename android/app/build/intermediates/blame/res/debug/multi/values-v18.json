@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/anthony/dev/DynamicInputs/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+        "outputFile": "C:\\Users\\Ryan Poe\\Desktop\\Development\\dynamicinputs\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "/Users/anthony/.android/build-cache/66429f0902a6cd90320fcc4b2d7c6792ca3b45e6/output/res/values-v18/values-v18.xml",
+                    "file": "C:\\Users\\Ryan Poe\\.android\\build-cache\\28454c662ae6d2e95176f128f85f84a29e571595\\output\\res\\values-v18\\values-v18.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
