@@ -1,22 +1,26 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import Template from "../../Presentation/Templates/Default"
 
-const INPUT_TYPES = {
-	text: "Text",
-	object: "ObjectType",
-	password: "Password",
-};
 
 class Schema extends Component {
 	render() {
 		const { schema } = this.props;
 
 		const InputType = this.getInputType(schema);
+		const Template = this.getTemplate(schema);
 
 		return (
-			<Template inputType={InputType} schema={schema} />
+			<Template
+				inputType={InputType}
+				schema={schema}
+			    title={schema.title}
+			/>
 		);
+	}
+
+	getTemplate(schema){
+		const templates = require("../../Presentation/Templates").default;
+		return templates.Default;
 	}
 
 	getInputType(schema){
