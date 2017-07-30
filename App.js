@@ -5,7 +5,7 @@ import Form from './src/form'
 export default class App extends React.Component {
   render() {
       const schema = {
-          inputType: 'object',
+          inputType: 'as',
           xxx:'asdf',
       };
 

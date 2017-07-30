@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { View } from "react-native";
+import Template from "../../Presentation/Templates/Default"
 
 const INPUT_TYPES = {
 	text: "Text",
@@ -15,7 +17,8 @@ class Schema extends Component {
 		const InputType = this.getInputType(schema,inputs);
 
 		return (
-			<InputType schema={schema}/>
+			//<View/>
+			<Template inputType={InputType} />
 		);
 	}
 
