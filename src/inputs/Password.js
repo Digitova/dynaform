@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Text from "./Text";
 import { View } from 'react-native';
 
-class Password extends React.Component {
+export default class Password extends Component {
     render() {
         const {
             name,
@@ -18,13 +18,11 @@ class Password extends React.Component {
             onChange,
             onSubmit,
         } = this.props
+
         return (
             <View>
-                <
                 <Text />
             </View>
         );
     }
 }
-
-export default Password;
