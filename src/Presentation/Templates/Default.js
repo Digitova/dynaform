@@ -1,8 +1,6 @@
 import React from "react";
 import { View } from 'react-native';
-import Title from '../Elements/Title';
-import Subtitle from '../Elements/Subtitle';
-import Helper from '../Elements/Subtitle';
+import { Title, Subtitle, Helper } from '../Elements';
 import Styles from '../../styles'
 
 export default class extends React.Component {

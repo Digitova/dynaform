@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Label from './Label';
 
-export default class extends Component {
+export default class Title extends Component {
     render() {
         const {style} = this.props
 
