@@ -1,5 +1,5 @@
 export const basic = {
-    type: "object",
+	inputType: "object",
     properties: {
         "firstName": {
             dataType: "string",
@@ -23,7 +23,7 @@ export const basic = {
 }
 
 export const advanced = {
-    type: "object",
+	inputType: "object",
     properties: {
         todos: {
             inputType: "array",
