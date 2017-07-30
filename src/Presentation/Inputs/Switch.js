@@ -12,13 +12,13 @@ export default class extends Component
         const {
             style,
             disabled,
-            value,
+            data,
             ...additionalProps,
         } = this.props
         return (
             <Switch
                 style={style}
-                value={!!value}
+                defaultValue={!!data}
                 disabled={!!disabled}
                 onValueChange={onValueChangeHandler}
                 {...additionalProps}
