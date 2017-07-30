@@ -22,6 +22,7 @@ export default class extends Component {
             <TextInput
                 {...additionalProps}
                 name={name}
+                defaultValue={data ? data : ''}
                 style={mergedStyles.TextInput}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
@@ -35,7 +36,7 @@ const Styles = StyleSheet.create({
     TextInput: {
         borderRadius: 5,
         borderWidth: StyleSheet.hairlineWidth,
-	    height: 30,
+        height: 30,
         marginLeft: 10,
         marginRight: 10,
         borderColor: '#CCC',
