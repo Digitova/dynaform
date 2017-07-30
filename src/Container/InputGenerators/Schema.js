@@ -3,7 +3,7 @@ import * as Inputs from '../../Presentation/Inputs'
 import * as InputGenerators from './index'
 const inputTypes = Object.assign({}, Inputs.default, InputGenerators.default)
 
-class Schema extends Component {
+export default class Schema extends Component {
     render() {
         const {
             schema,
@@ -39,6 +39,3 @@ class Schema extends Component {
         return inputName in inputs;
     }
 }
-
-
-export default Schema;
