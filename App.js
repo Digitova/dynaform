@@ -4,10 +4,15 @@ import Form from './src/form'
 
 export default class App extends React.Component {
   render() {
+      const schema = {
+          inputType: 'object',
+          xxx:'asdf',
+      };
+
     return (
         <View>
           <StatusBar hidden={true} />
-          <Form schema="{ type: 'asdfa' }" />
+          <Form schema={schema } />
         </View>
     );
   }
