@@ -10,13 +10,13 @@ export const basic = {
         },
         lastName: {
             dataType: "string",
-            widgets: "textInput",
+            inputType: "textInput",
             title: 'Last Name',
             required: true,
         },
         "phoneNumber": {
             dataType: "string",
-            widgets: "textInput",
+            inputType: "textInput",
             validator: "phoneNumber",
         }
     }
@@ -26,7 +26,7 @@ export const advanced = {
     type: "object",
     properties: {
         todos: {
-            type: "array",
+            inputType: "array",
             properties: {
                 id: {
                     dataType: 'readOnly',
