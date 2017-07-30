@@ -27,6 +27,7 @@ export default class extends Component {
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={onChange}
+                underlineColorAndroid='rgba(0,0,0,0)'
             />
         );
     }
@@ -36,10 +37,10 @@ const Styles = StyleSheet.create({
     TextInput: {
         borderRadius: 5,
         borderWidth: StyleSheet.hairlineWidth,
-        height: 30,
+        height: 40,
         marginLeft: 10,
         marginRight: 10,
         borderColor: '#CCC',
-        paddingHorizontal: 5
+        paddingHorizontal: 5,
     }
 })
