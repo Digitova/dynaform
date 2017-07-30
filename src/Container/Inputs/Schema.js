@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 const INPUT_TYPES = {
 	text: "Text",
@@ -6,7 +6,7 @@ const INPUT_TYPES = {
 	password: "Password",
 };
 
-class Schema extends React.Component {
+class Schema extends Component {
 	render() {
 		const { schema } = this.props;
 		const inputs = require("../Inputs").default;
