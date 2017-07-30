@@ -4,7 +4,7 @@ import Template from "../../Presentation/Templates/Default"
 
 const INPUT_TYPES = {
 	text: "Text",
-	object: "Object",
+	object: "ObjectType",
 	password: "Password",
 };
 
@@ -18,7 +18,7 @@ class Schema extends Component {
 
 		return (
 			//<View/>
-			<Template inputType={InputType} />
+			<Template inputType={InputType} schema={schema} />
 		);
 	}
 
