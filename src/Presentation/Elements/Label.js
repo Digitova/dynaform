@@ -6,9 +6,7 @@ export default class extends React.Component {
         const {style} = this.props
 
         return (
-            <View style={style}>
-                <Text>{this.props.children}</Text>
-            </View>
+            <Text style={style}>{this.props.children}</Text>
         );
     }
 }

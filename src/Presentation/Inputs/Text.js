@@ -33,8 +33,11 @@ export default class extends Component {
 
 const Styles = StyleSheet.create({
     TextInput: {
-        borderRadius: 1,
+        borderRadius: 5,
         borderWidth: StyleSheet.hairlineWidth,
+	    height: 30,
+        marginLeft: 10,
+        marginRight: 10,
         borderColor: '#CCC',
         paddingHorizontal: 5
     }
