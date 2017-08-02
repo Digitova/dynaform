@@ -14,7 +14,7 @@ export default class Schema extends Component {
     }
 
     onChangeHandler() {
-        // Changes could come in as (index, value) or as just (value) depending
+        // Changes can come in as (index, value) or as just (value) depending
         // on the schema type. E.g., props need to know what value to update,
         // so they get a (key, value); arrays need to the know index; but text
         // boxes just need to know the value.

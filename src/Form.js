@@ -26,8 +26,6 @@ export default class extends Component
     render() {
         const { schema, data } = this.props
 
-        console.log(this.state.data)
-
         return (
             <View>
                 <Schema
