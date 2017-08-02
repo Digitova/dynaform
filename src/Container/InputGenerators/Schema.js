@@ -14,10 +14,23 @@ export default class Schema extends Component {
     }
 
     onChangeHandler() {
+        // Changes could come in as (index, value) or as just (value) depending
+        // on the schema type. E.g., props need to know what value to update,
+        // so they get a (key, value); arrays need to the know index; but text
+        // boxes just need to know the value.
         const name = arguments[1] ? arguments[0] : null
         const data = name ? arguments[1] : arguments[0]
+
         const newState = Object.assign({}, this.state)
-        newState.data = data.data ? data.data : data
+        // If we are passed a name, update that particular element; otherwise,
+        // update the data itself.
+        if(name) {
+            if(!newState.data) newState.data = {}
+            newState.data[name] = data
+        } else {
+            newState.data = data
+        }
+
         this.setState(newState, () => {
             if(this.props.name) {
                 this.props.onChange(this.props.name, this.state.data);

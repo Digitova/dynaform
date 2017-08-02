@@ -20,16 +20,13 @@ export default class extends Component
     onChange = (data) => {
         const newState = Object.assign({}, this.state)
         newState.data = data
-        // newState.arr.push(data ? data : 'No data passed in')
-        this.setState(newState, () => {
-            if (this.props.onChange) {
-                this.props.onChange(this.state.data)
-            }
-        });
+        this.setState(newState);
     }
 
     render() {
-        const { schema, data } = this.props;
+        const { schema, data } = this.props
+
+        console.log(this.state.data)
 
         return (
             <View>
