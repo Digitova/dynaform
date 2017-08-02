@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { View, Text } from "react-native";
-import Schema from './Schema'
+import React, { Component } from "react"
+import { View, Text } from "react-native"
+import Schema from "./Schema"
 
 export default class extends Component {
     render() {
-        const { schema, data } = this.props;
-        const properties = Object.keys(schema.properties);
+        const { schema, data } = this.props
+        const properties = Object.keys(schema.properties)
 
         return (
             <View>
-                {properties.map((name,index) => {
+                {properties.map((name, index) => {
                     return (
                         <Schema
                             schema={schema.properties[name]}
@@ -18,9 +18,9 @@ export default class extends Component {
                             name={name}
                             onChange={this.props.onChange}
                         />
-                    );
+                    )
                 })}
             </View>
-        );
+        )
     }
 }

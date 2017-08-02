@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import { TextInput, StyleSheet } from "react-native";
+import React, { Component } from "react"
+import { TextInput, StyleSheet } from "react-native"
 
 export default class extends Component {
-
     render() {
         const {
             name,
@@ -14,7 +13,7 @@ export default class extends Component {
             error,
             onChange,
             onSubmit,
-            ...additionalProps,
+            ...additionalProps
         } = this.props
 
         const mergedStyles = StyleSheet.flatten([Styles, style])
@@ -22,14 +21,14 @@ export default class extends Component {
             <TextInput
                 {...additionalProps}
                 name={name}
-                defaultValue={data ? data : ''}
+                defaultValue={data ? data : ""}
                 style={mergedStyles.TextInput}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={onChange}
-                underlineColorAndroid='rgba(0,0,0,0)'
+                underlineColorAndroid="rgba(0,0,0,0)"
             />
-        );
+        )
     }
 }
 
@@ -40,7 +39,7 @@ const Styles = StyleSheet.create({
         height: 40,
         marginLeft: 10,
         marginRight: 10,
-        borderColor: '#CCC',
-        paddingHorizontal: 5,
+        borderColor: "#CCC",
+        paddingHorizontal: 5
     }
 })

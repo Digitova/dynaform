@@ -1,21 +1,23 @@
-import React from "react";
-import { View,StyleSheet } from 'react-native';
-import Label from './Label';
+import React from "react"
+import { View, StyleSheet } from "react-native"
+import Label from "./Label"
 
 export default class extends React.Component {
     render() {
-        const {style} = this.props
+        const { style } = this.props
 
         return (
-            <Label style={Styles.Subtitle}>{this.props.children}</Label>
-        );
+            <Label style={Styles.Subtitle}>
+                {this.props.children}
+            </Label>
+        )
     }
 }
 
 const Styles = StyleSheet.create({
-	Subtitle: {
-		fontSize: 12,
-		color: '#666',
-		paddingHorizontal: 10
-	}
+    Subtitle: {
+        fontSize: 12,
+        color: "#666",
+        paddingHorizontal: 10
+    }
 })
