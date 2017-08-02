@@ -3,14 +3,6 @@ import { View, Text } from "react-native";
 import Schema from './Schema'
 
 export default class extends Component {
-    constructor(props)
-    {
-        super(props)
-        this.state = {
-            data: {}
-        }
-    }
-
     render() {
         const { schema, data } = this.props;
         const properties = Object.keys(schema.properties);
