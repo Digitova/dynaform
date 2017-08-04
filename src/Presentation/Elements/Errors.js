@@ -1,14 +1,14 @@
 import React, { Component } from "react"
-import { View, Text } from "react-native"
+import {View, Text } from "react-native"
+import Label from './Label'
 
 export default class extends Component {
     render() {
-        const { styles, errors } = this.props
+	    const { styleObject, errors, associatedInputType } = this.props
+	    const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedInputType+'Title'] : {}]
         return (
-            <View styles={styles}>
-                <View>
-                    {errors.map( (error, i) => <Text key={i}>{error}</Text>) }
-                </View>
+            <View styles={mergedStyles}>
+                    {errors.map( (error, i) => <Label key={i}>{error}</Label>) }
             </View>
         )
     }
