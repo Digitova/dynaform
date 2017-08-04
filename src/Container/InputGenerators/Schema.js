@@ -32,12 +32,13 @@ export default class Schema extends Component {
 
     validate(validators) {
         if(!validators) return
+        console.log('Validating against ', validators)
         validators = Array.isArray(validators) ? validators : [validators]
         // Don't take duplicate validations. This usually only filters out extra
         // "requires" when required: true is set along with a "required" validator
         validators = validators.filter((validator, i, arr) => arr.includes(validator))
         validators.forEach(validator => {
-            let validatorFunction = typeof validator == 'function' ? validator : Validators[validator] || Validators.UnsupportedValidator
+            const validatorFunction = this.getValidatorFunctionFor(validator)
             // This allows us to pass arguments to our validators by putting the
             // arguments after a colon. E.g., "length:12".
             const args = typeof validator !== 'function' ? validator.split(':').slice(0) : []
@@ -45,12 +46,19 @@ export default class Schema extends Component {
         })
     }
 
-    // Possible events:  change, blur, submit
-    validationHandler(event = EVENT_CHANGE) {
+    getValidatorFunctionFor(validator) {
+        if(typeof validator == 'function') return validator
+        let validatorFunction = Validators.default[validator]
+        if(!validatorFunction) validatorFunction = Validators.default.UnsupportedValidator
+        return validatorFunction
+    }
+
+    validationHandler(eventName = EVENT_CHANGE) {
         this.clearErrors()
-        if(!this.props.validation)  return
-        if(!AVAILABLE_EVENTS.includes(event)) {
-            throw "Unavailable event passed to schema: " + event
+        if(!this.props.validation && !this.props.schema.required)  return
+        console.log('Calling validation handlers for: ' + eventName)
+        if(!AVAILABLE_EVENTS.includes(eventName)) {
+            throw "Unavailable event passed to schema: " + eventName
         }
         // If it's just an array, we by default validate on change
         if(Array.isArray(this.props.validation)) {
@@ -58,9 +66,10 @@ export default class Schema extends Component {
             if(this.props.required) validators.push('required')
             this.validate(this.props.validation)
         } else {
-            const validators = [].concat(this.props.validation[event])
-            if(this.props.required) validators.push('required')
-            this.validate(this.props.validation[event])
+            const validators = []
+            if(this.props.validation && this.props.validation[eventName]) validators.concat(this.props.validation[eventName])
+            if(this.props.schema.required) validators.push('required')
+            this.validate(validators)
         }
     }
 
@@ -90,6 +99,7 @@ export default class Schema extends Component {
             } else {
                 this.props.onChange(this.state.data)
             }
+            this.validationHandler()
         })
     }
 
@@ -98,7 +108,6 @@ export default class Schema extends Component {
 
         const InputType = this.getInputType(schema)
         const Template = this.getTemplate(schema)
-        console.log(this.props)
         return (
             <Template
                 {...additionalProps}

@@ -1,4 +1,4 @@
-export Error from "./Error"
+export Errors from "./Errors"
 export Helper from "./Helper"
 export Label from "./Label"
 export Subtitle from "./Subtitle"
