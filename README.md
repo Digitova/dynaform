@@ -7,6 +7,7 @@ This project is loosely based on [React Json Schema From](https://github.com/moz
 
 * [Installation](#installation)
 * [Usage](#usage)
+    - [The schema](#the-schema)
     - [Form initialization](#form-initialization)
     - [Form event handlers](#form-event-handlers)
 * [Form customization](#form-customization)   
@@ -29,6 +30,7 @@ $ npm install react-native-dynaform --save
 
 The whole purpose of this component is to enable dynamic form creation via a JSON schema.  It is only fitting that we start with the Schema
 
+###### The Schema
 ```
 {
     inputType: "object",
@@ -51,6 +53,8 @@ The whole purpose of this component is to enable dynamic form creation via a JSO
     }
 
 ```
+
+###### Form initialization
 Next create the <DynaForm> object and pass it the schema and optionally a default state.
 
 ```
