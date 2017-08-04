@@ -33,9 +33,15 @@ export default class Schema extends Component {
     validate(validators) {
         if(!validators) return
         validators = Array.isArray(validators) ? validators : [validators]
+        // Don't take duplicate validations. This usually only filters out extra
+        // "requires" when required: true is set along with a "required" validator
+        validators = validators.filter((validator, i, arr) => arr.includes(validator))
         validators.forEach(validator => {
             let validatorFunction = typeof validator == 'function' ? validator : Validators[validator] || Validators.UnsupportedValidator
-            validatorFunction(this.state.data).catch(this.addError.bind(this))
+            // This allows us to pass arguments to our validators by putting the
+            // arguments after a colon. E.g., "length:12".
+            const args = typeof validator !== 'function' ? validator.split(':').slice(0) : []
+            validatorFunction(this.state.data, args).catch(this.addError.bind(this))
         })
     }
 
@@ -48,8 +54,12 @@ export default class Schema extends Component {
         }
         // If it's just an array, we by default validate on change
         if(Array.isArray(this.props.validation)) {
+            const validators = this.props.validation
+            if(this.props.required) validators.push('required')
             this.validate(this.props.validation)
         } else {
+            const validators = [].concat(this.props.validation[event])
+            if(this.props.required) validators.push('required')
             this.validate(this.props.validation[event])
         }
     }
