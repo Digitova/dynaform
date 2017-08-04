@@ -35,6 +35,9 @@ const Styles = {
         borderWidth: StyleSheet.hairlineWidth,
         borderColor: 'red'
     },
+    textTitle: {
+        color: 'green'
+    },
     password: {
         borderColor: 'blue'
     }

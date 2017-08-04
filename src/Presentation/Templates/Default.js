@@ -23,7 +23,10 @@ export default class extends React.Component {
     renderTitle() {
         if (this.props.title) {
             return (
-                <Title>
+                <Title
+                    associatedInputType={this.props.inputTypeName}
+                    styleObject={this.props.styleObject}
+                >
                     {this.props.title}
                 </Title>
             )
@@ -33,7 +36,10 @@ export default class extends React.Component {
     renderSubtitle() {
         if (this.props.subtitle) {
             return (
-                <Subtitle>
+                <Subtitle
+                    associatedInputType={this.props.inputTypeName}
+                    styleObject={this.props.styleObject}
+                >
                     {this.props.subtitle}
                 </Subtitle>
             )
@@ -43,7 +49,10 @@ export default class extends React.Component {
     renderHelper() {
         if (this.props.helper) {
             return (
-                <Helper>
+                <Helper
+                    associatedInputType={this.props.inputTypeName}
+                    styleObject={this.props.styleObject}
+                >
                     {this.props.helper}
                 </Helper>
             )
