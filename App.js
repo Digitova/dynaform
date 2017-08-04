@@ -22,6 +22,7 @@ export default class App extends React.Component {
           <DynaForm
               schema={testSchema.basic}
               data={predata}
+              styleObject={Styles}
           />
         </View>
     );
