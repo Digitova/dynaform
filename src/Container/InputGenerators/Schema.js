@@ -88,12 +88,12 @@ export default class Schema extends Component {
 
         const InputType = this.getInputType(schema)
         const Template = this.getTemplate(schema)
-        console.log(this.props)
         return (
             <Template
                 {...additionalProps}
                 onChange={this.onChangeHandler.bind(this)}
                 inputType={InputType}
+                inputTypeName={this.getNameOfInputType(schema)}
                 schema={schema}
                 title={schema.title}
                 subtitle={schema.subtitle}
@@ -111,6 +111,12 @@ export default class Schema extends Component {
         return this.isSupportedInputType(schema.inputType, inputTypes)
             ? inputTypes[schema.inputType]
             : inputTypes.UnsupportedInput
+    }
+
+    getNameOfInputType(schema){
+	    return this.isSupportedInputType(schema.inputType, inputTypes)
+            ? schema.inputType
+            : 'unsupprotedInput'
     }
 
     isSupportedInputType(inputName, inputs) {
