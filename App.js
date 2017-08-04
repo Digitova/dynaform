@@ -19,8 +19,19 @@ export default class App extends React.Component {
     return (
         <View>
           <StatusBar hidden={true} />
-          <Form schema={testSchema.basic} data={predata} />
+          <Form schema={testSchema.basic} data={predata} styleObject={Styles} />
         </View>
     );
   }
+}
+
+
+const Styles = {
+    text: {
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: 'red'
+    },
+    password: {
+        borderColor: 'blue'
+    }
 }
