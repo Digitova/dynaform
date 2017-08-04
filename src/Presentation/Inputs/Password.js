@@ -3,6 +3,13 @@ import Text from "./Text"
 
 export default class extends Component {
     render() {
-        return <Text secureTextEntry={true} {...this.props} />
+        const {styleObject, ...addtionalProps} = this.props
+        const mergedStyles = {text: styleObject['password']}
+        return (
+            <Text secureTextEntry={true}
+                  styleObject={mergedStyles}
+                  {...addtionalProps}
+            />
+        )
     }
 }
