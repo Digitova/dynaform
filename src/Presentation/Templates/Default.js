@@ -1,10 +1,13 @@
 import React from "react"
 import { View, StyleSheet } from "react-native"
-import { Title, Subtitle, Helper } from "../Elements"
+import { Title, Subtitle, Helper, Errors } from "../Elements"
 
 export default class extends React.Component {
     render() {
-        const { schema, title, subtitle, helper, style } = this.props
+        const {
+            style,
+            errors
+        } = this.props
 
         const InputType = this.props.inputType
         return (
@@ -13,7 +16,7 @@ export default class extends React.Component {
                 {this.renderSubtitle()}
                 <InputType {...this.props} />
                 {this.renderHelper()}
-                {/*<Error styles={styles} {...error} />*/}
+                {errors && errors.length > 0 ? <Errors styles={style} errors={errors} /> : false }
             </View>
         )
     }
