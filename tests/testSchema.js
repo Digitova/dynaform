@@ -16,6 +16,11 @@ export const basic = {
             title: 'Last Name',
             required: true,
         },
+	    "password": {
+        	dataType: 'string',
+		    inputType: 'password',
+		    title: 'Password'
+	    },
 	    "subForm": {
 		    inputType: "object",
 		    properties: {

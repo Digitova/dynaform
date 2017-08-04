@@ -6,7 +6,7 @@ import UnsupportedInput from "./UnsupportedInput"
 
 export default {
     text: Text,
-    "password:": Password,
+    password: Password,
     switch: Switch,
     UnsupportedInput
 }

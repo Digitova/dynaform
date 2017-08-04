@@ -27,3 +27,14 @@ export default class App extends React.Component {
     );
   }
 }
+
+
+const Styles = {
+    text: {
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: 'red'
+    },
+    password: {
+        borderColor: 'blue'
+    }
+}
