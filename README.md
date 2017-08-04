@@ -54,12 +54,11 @@ The whole purpose of this component is to enable dynamic form creation via a JSO
 
 ```
 
-###### Form initialization
 Next create the <DynaForm> object and pass it the schema and optionally a default state.
+###### Form initialization
 
 ```
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import DynaForm from './src/DynaForm.js'
 import schema from './schema/schema.js'
 
