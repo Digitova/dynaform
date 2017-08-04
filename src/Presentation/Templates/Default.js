@@ -16,7 +16,7 @@ export default class extends React.Component {
                 {this.renderSubtitle()}
                 <InputType {...this.props} />
                 {this.renderHelper()}
-                {errors && errors.length ? <Error styles={styles} errors={errors} /> : false }
+                {errors && errors.length > 0 ? <Errors styles={style} errors={errors} /> : false }
             </View>
         )
     }

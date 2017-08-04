@@ -42,7 +42,9 @@ export default class Schema extends Component {
             // This allows us to pass arguments to our validators by putting the
             // arguments after a colon. E.g., "length:12".
             const args = typeof validator !== 'function' ? validator.split(':').slice(0) : []
-            validatorFunction(this.state.data, args).catch(this.addError.bind(this))
+            validatorFunction(this.state.data, args)
+                .then(() => {})
+                .catch(this.addError.bind(this))
         })
     }
 
@@ -108,9 +110,12 @@ export default class Schema extends Component {
 
         const InputType = this.getInputType(schema)
         const Template = this.getTemplate(schema)
+        const errors = this.state.errors
+
         return (
             <Template
                 {...additionalProps}
+                errors={errors}
                 onChange={this.onChangeHandler.bind(this)}
                 inputType={InputType}
                 inputTypeName={this.getNameOfInputType(schema)}
@@ -134,7 +139,7 @@ export default class Schema extends Component {
     }
 
     getNameOfInputType(schema){
-	    return this.isSupportedInputType(schema.inputType, inputTypes)
+        return this.isSupportedInputType(schema.inputType, inputTypes)
             ? schema.inputType
             : 'unsupprotedInput'
     }
