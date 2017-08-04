@@ -6,7 +6,6 @@ export default class Title extends Component {
     render() {
         const { styleObject, associatedInputType } = this.props
         const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedInputType+'Title'] : {}]
-        console.log(associatedInputType+'Title')
         return (
             <Label style={mergedStyles}>
                 {this.props.children}
