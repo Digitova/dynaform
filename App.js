@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import Form from './src/Form.js'
+import DynaForm from './src/DynaForm.js'
 import testSchema from './tests/testSchema';
 
 export default class App extends React.Component {
-  render() {
 
+  render() {
     const predata = {
         firstName: 'Hello',
         lastName: 'World',
@@ -19,7 +19,10 @@ export default class App extends React.Component {
     return (
         <View>
           <StatusBar hidden={true} />
-          <Form schema={testSchema.basic} data={predata} styleObject={Styles} />
+          <DynaForm
+              schema={testSchema.basic}
+              data={predata}
+          />
         </View>
     );
   }
