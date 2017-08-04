@@ -4,10 +4,11 @@ import Label from "./Label"
 
 export default class Title extends Component {
     render() {
-        const { style } = this.props
-
+        const { styleObject, associatedInputType } = this.props
+        const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedInputType+'Title'] : {}]
+        console.log(associatedInputType+'Title')
         return (
-            <Label style={Styles.Title}>
+            <Label style={mergedStyles}>
                 {this.props.children}
             </Label>
         )
