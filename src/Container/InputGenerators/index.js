@@ -1,5 +1,5 @@
-import ObjectType from "./ObjectType";
+import ObjectType from "./ObjectType"
 
 export default {
-    "object": ObjectType,
-};
+    object: ObjectType
+}

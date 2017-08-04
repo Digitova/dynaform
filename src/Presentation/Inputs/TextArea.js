@@ -1,11 +1,8 @@
-import React, { Component } from "react";
-import Text from "./Text";
+import React, { Component } from "react"
+import Text from "./Text"
 
-export default class extends Component
-{
+export default class extends Component {
     render() {
-        return (
-            <Text multiline={true} {...this.props} />
-        );
+        return <Text multiline={true} {...this.props} />
     }
 }
