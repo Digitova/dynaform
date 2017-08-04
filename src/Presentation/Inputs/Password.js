@@ -4,11 +4,12 @@ import Text from "./Text"
 export default class extends Component {
     render() {
         const {styleObject, ...addtionalProps} = this.props
-        const mergedStyles = {text: styleObject['password']}
+        const mergedStyles = styleObject ? {text: styleObject['password']} : {text: {}}
         return (
-            <Text secureTextEntry={true}
-                  styleObject={mergedStyles}
-                  {...addtionalProps}
+            <Text
+                secureTextEntry={true}
+                styleObject={mergedStyles}
+                {...addtionalProps}
             />
         )
     }

@@ -3,6 +3,14 @@ import Text from "./Text"
 
 export default class extends Component {
     render() {
-        return <Text multiline={true} {...this.props} />
+	    const {styleObject, ...addtionalProps} = this.props
+	    const mergedStyles = styleObject ? {text: styleObject['textArea']} : {text: {}}
+        return (
+            <Text
+                multiline={true}
+                styleObject={mergedStyles}
+                {...addtionalProps}
+            />
+        )
     }
 }
