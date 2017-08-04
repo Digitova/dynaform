@@ -5,7 +5,7 @@ export default class extends Component {
     render() {
         const {
             name,
-            style,
+            styleObject,
             placeholder,
             data,
             dataType,
@@ -16,13 +16,12 @@ export default class extends Component {
             ...additionalProps
         } = this.props
 
-        const mergedStyles = StyleSheet.flatten([Styles, style])
         return (
             <TextInput
                 {...additionalProps}
                 name={name}
                 defaultValue={data ? data : ""}
-                style={mergedStyles.TextInput}
+                style={[Styles.TextInput, styleObject['text']]}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={onChange}
