@@ -7,8 +7,8 @@ export default class extends Component {
 	    const { styleObject, errors, associatedInputType } = this.props
 	    const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedInputType+'Title'] : {}]
         return (
-            <View styles={mergedStyles}>
-                    {errors.map( (error, i) => <Label key={i}>{error}</Label>) }
+            <View>
+                    {errors.map( (error, i) => <Label styles={mergedStyles} key={i}>{error}</Label>) }
             </View>
         )
     }
