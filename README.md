@@ -1,4 +1,4 @@
-![Screenshot](/images/dynaform_64.png)
+![Screenshot](/images/dynaform_128.png)
 
 A simple React-Native component capable of building dynamic react-native forms out of a JSON schema.
 This project is loosely based on [React Json Schema From](https://github.com/mozilla-services/react-jsonschema-form).
