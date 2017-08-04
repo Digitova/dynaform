@@ -21,7 +21,7 @@ export default class extends Component {
                 {...additionalProps}
                 name={name}
                 defaultValue={data ? data : ""}
-                style={[Styles.TextInput, styleObject['text']]}
+                style={[Styles.TextInput, styleObject ? styleObject['text'] : {}]}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={onChange}
