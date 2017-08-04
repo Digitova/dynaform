@@ -2,12 +2,6 @@
   "name": "DynamicInputs",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "babel-preset-react-native-stage-0": "^1.0.1",
-    "jest-expo": "~19.0.0",
-    "prettier": "^1.5.3",
-    "react-test-renderer": "16.0.0-alpha.12"
-  },
   "scripts": {
     "start": "react-native start",
     "android": "react-native run-android",
@@ -15,13 +9,14 @@
     "test": "node node_modules/jest/bin/jest.js --watch",
     "beautify": "node node_modules/prettier/bin/prettier.js --print-width 100 --write --tab-width 4 --no-semi \"src/**/*.js\""
   },
-  "jest": {
-    "preset": "jest-expo"
-  },
   "dependencies": {
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "babel-preset-stage-0": "^6.24.1",
+    "jest": "^20.0.4",
+    "prettier": "^1.5.3",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.46.1",
-    "react-native-radio-buttons": "^1.0.0"
+    "react-native-radio-buttons": "^1.0.0",
+    "react-test-renderer": "16.0.0-alpha.12"
   }
 }
