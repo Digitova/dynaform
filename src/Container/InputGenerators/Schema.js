@@ -43,7 +43,7 @@ export default class Schema extends Component {
 
         const InputType = this.getInputType(schema)
         const Template = this.getTemplate(schema)
-
+	    console.log(this.props)
         return (
             <Template
                 {...additionalProps}

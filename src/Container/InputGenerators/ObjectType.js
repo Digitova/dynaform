@@ -4,7 +4,7 @@ import Schema from "./Schema"
 
 export default class extends Component {
     render() {
-        const { schema, data } = this.props
+        const { schema, data, styleObject } = this.props
         const properties = Object.keys(schema.properties)
 
         return (
@@ -17,6 +17,7 @@ export default class extends Component {
                             key={index}
                             name={name}
                             onChange={this.props.onChange}
+                            styleObject={styleObject}
                         />
                     )
                 })}

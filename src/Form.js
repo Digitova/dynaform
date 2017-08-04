@@ -23,8 +23,7 @@ export default class extends Component {
     }
 
     render() {
-        const { schema, data } = this.props
-
+        const { schema, data, styleObject } = this.props
         return (
             <View>
                 <Schema
@@ -32,6 +31,7 @@ export default class extends Component {
                     data={typeof data == "object" ? data : {}}
                     onSubmit={this.onSubmitHandler}
                     onChange={this.onChange}
+                    styleObject={styleObject}
                 />
             </View>
         )
