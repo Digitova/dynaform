@@ -35,7 +35,6 @@ Create the
 ```
 import React from 'react';
 import DynaForm from 'react-native-dynaform'
-import schema from './schema/schema.js'
 
 export default class App extends React.Component {
 
