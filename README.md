@@ -32,7 +32,7 @@ Create the
 
 <dynaform> object and pass it the schema and optionally a default state.</dynaform>
 
-```
+```javascript
 import React from 'react';
 import DynaForm from 'react-native-dynaform'
 
@@ -83,7 +83,7 @@ The schema defines the structure, data types, and is used to customize the form.
 
 Each level of the schema requires an _inputType_ property. The _inputType_ property is a required field and describes the type of form input at this level of the schema.
 
-```
+```javascript
 {
     inputType: "object | string | password | ..."
     ...
@@ -101,7 +101,7 @@ Next we will detail the different input types and the available properties for e
 
 Example:
 
-```
+```javascript
 {
     title: "Login Form",
     inputType: "object",
@@ -129,7 +129,7 @@ Example:
 
 Example:
 
-```
+```javascript
 
 "formElement1": {
     inputType: "text",
@@ -146,7 +146,7 @@ Example:
 
 To specify how you want your form fields validated, DynaForm ships with a handful of built-in, ready to roll validators. Attach your validators to your field properties like so:
 
-```
+```javascript
 {
     inputType: "object",
     properties: {
@@ -163,19 +163,19 @@ To specify how you want your form fields validated, DynaForm ships with a handfu
 
 Validators can take arguments or be just place true/false functions. "required", for example, doesn't take arguments, so you write it just as:
 
-```
+```javascript
 validators: ['required']
 ```
 
 or, for short,
 
-```
+```javascript
 required: true,
 ```
 
 Other validators need an argument to work, such as minimum or maximum lengths:
 
-```
+```javascript
 validation: ['required', 'minimum:6', 'maximum:24']
 ```
 
