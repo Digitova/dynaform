@@ -4,6 +4,7 @@ import MinimumLength from './MinimumLength'
 import MaximumLength from './MaximumLength'
 import RangeValidator from './Range'
 import Numeric from './Numeric'
+import Regex from './Regex'
 
 export default {
     "required": Required,
@@ -11,5 +12,6 @@ export default {
     "maximum": MaximumLength,
     "range": RangeValidator,
     "numeric": Numeric,
+    "regex": Regex,
     UnsupportedValidator
 }
