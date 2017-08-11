@@ -11,6 +11,7 @@ export default class extends Component {
             dataType,
             validators,
             error,
+            errors,
             onChange,
             onSubmit,
             ...additionalProps
@@ -21,7 +22,7 @@ export default class extends Component {
                 {...additionalProps}
                 name={name}
                 defaultValue={data ? data : ""}
-                style={[Styles.TextInput, styleObject ? styleObject['text'] : {}]}
+                style={[Styles.TextInput, styleObject ? styleObject['text'] : {}, errors.length > 0 ? Styles.ErrorText : {}]}
                 placeholder={placeholder}
                 onSubmitEditing={onSubmit}
                 onChangeText={onChange}
@@ -39,5 +40,8 @@ const Styles = StyleSheet.create({
         borderColor: "#999",
         paddingHorizontal: 10,
         backgroundColor: "#fff"
+    },
+    ErrorText: {
+        borderColor: "#dd4444"
     }
 })
