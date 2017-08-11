@@ -11,6 +11,7 @@ A simple React-Native component capable of building dynamic react-native forms o
   - [Input types](#input-types)
 
 - [Form customization](#form-customization)
+
 - [Form data validation](#form-data-validation)
 
 # Installation
@@ -192,4 +193,28 @@ Validator types:
     email
     phone-number
     regex:<expression>
+```
+
+### Custom validators
+
+If you would rather pass in your own validator to the validation functions, the validation object allows you to pass functions directly to it. The functions must be similar in signature to those in the `src/Validation` directory.
+
+```javascript
+const myForm =  {
+    ...
+    validation: ['required', garfield, 'minimum:4']
+    ...
+}
+
+const garfield = (input) => {
+    return new Promise((resolve, reject) => {
+        if(input.toLowerCase() == 'lasagna') {
+            // It passes!
+            resolve()
+        } else {
+            // It fails :(
+            reject('Garfield must have lasagna')
+        }
+    })
+}
 ```
