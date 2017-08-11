@@ -5,15 +5,20 @@ import Label from './Label'
 export default class extends Component {
     render() {
 	    const { styleObject, errors, associatedElementType } = this.props
-	    const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedElementType+'Title'] : {}]
+	    const mergedStyles = [Styles.Errors, styleObject ? styleObject[associatedElementType+'Errors'] : {}]
         return (
-            <View>
-                    {errors.map( (error, i) => <Label styles={mergedStyles} key={i}>{error}</Label>) }
+            <View style={{flex: 1, alignItems: 'flex-end'}}>
+                    {errors.map( (error, i) => <Label style={mergedStyles} key={i}>{error}</Label>) }
             </View>
         )
     }
 }
 
 const Styles = {
-
+	Errors: {
+		fontSize: 12,
+		fontWeight: '500',
+		color: "#dd4444",
+		paddingHorizontal: 10
+	}
 }

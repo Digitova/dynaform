@@ -4,7 +4,7 @@ import Label from './Label'
 export default class extends React.Component {
     render() {
 	    const { styleObject, associatedElementType } = this.props
-	    const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedElementType+'Title'] : {}]
+	    const mergedStyles = [Styles.Error, styleObject ? styleObject[associatedElementType+'Error'] : {}]
 	    return (
             <Label style={mergedStyles}>
                 {this.props.children}
@@ -14,5 +14,10 @@ export default class extends React.Component {
 }
 
 const Styles = {
-
+	Error: {
+		fontSize: 10,
+		fontWeight: '700',
+		color: "#dd4444",
+		paddingHorizontal: 10
+	}
 }

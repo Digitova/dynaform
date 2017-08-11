@@ -16,8 +16,10 @@ export default class Title extends Component {
 
 const Styles = StyleSheet.create({
     Title: {
-        fontSize: 18,
-        color: "#333",
-        paddingHorizontal: 10
+        fontSize: 14,
+        fontWeight: '700',
+        color: "#666",
+        paddingHorizontal: 10,
+        marginBottom: 5
     }
 })

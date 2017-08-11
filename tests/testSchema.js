@@ -5,7 +5,7 @@ export const basic = {
             dataType: "string",
 	        elementType: "text",
             placeholder: 'Please enter your first name',
-            title: 'First Name',
+            title: 'FIRST NAME',
             subtitle:'What yo name?',
             helper: 'Your first name, kind person!',
             required: true
@@ -13,58 +13,20 @@ export const basic = {
         "lastName": {
             dataType: "string",
 	        elementType: "text",
-            title: 'Last Name',
+            title: 'LAST NAME',
             required: true,
         },
 	    "password": {
         	dataType: 'string',
 		    elementType: 'password',
-		    title: 'Password'
+		    title: 'PASSWORD'
 	    },
 	    "isAdmin":{
 		    dataType: 'boolean',
 		    elementType: "switch",
-		    title: 'Is Admin?',
-	    },
-	    "subForm": {
-		    elementType: "form",
-		    elements: {
-			    "firstName": {
-				    dataType: "string",
-				    elementType: "text",
-				    placeholder: 'Please enter your first name',
-				    title: 'First Name',
-				    subtitle:'What yo name?',
-				    helper: 'Your first name, kind person!',
-				    required: true
-			    },
-			    "lastName": {
-				    dataType: "string",
-				    elementType: "text",
-				    title: 'Last Name',
-				    required: true,
-			    },
-			    "subForm": {
-				    elementType: "form",
-				    elements: {
-					    "firstName": {
-						    dataType: "string",
-						    elementType: "text",
-						    placeholder: 'Please enter your first name',
-						    title: 'First Name',
-						    subtitle:'What yo name?',
-						    helper: 'Your first name, kind person!',
-						    required: true
-					    },
-					    "lastName": {
-						    dataType: "string",
-						    elementType: "text",
-						    title: 'Last Name',
-						    required: true,
-					    }
-				    }
-			    }
-		    }
+		    subtitle:'Is the user an Admin?',
+		    helper: 'If so mark it here',
+		    title: 'IS ADMIN?',
 	    }
     }
 }

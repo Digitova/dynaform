@@ -63,7 +63,7 @@ export default class extends React.Component {
 
 const Styles = StyleSheet.create({
     View: {
-        marginBottom: 5,
+        marginBottom: 15,
         marginTop: 5
     }
 })

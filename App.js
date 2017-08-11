@@ -9,16 +9,13 @@ export default class App extends React.Component {
 		super(props)
 		this.state = {
 			formData: {
-				firstName: 'Hello',
-				lastName: 'World',
-				isAdmin: true
 			}
 		}
 	}
 
     render() {
 	    return (
-	        <View>
+	        <View style={{flex: 1, backgroundColor: "#f5f5f5"}}>
 	          <StatusBar hidden={true} />
 	          <DynaForm
 	              schema={testSchema.basic}
@@ -42,14 +39,5 @@ export default class App extends React.Component {
 
 
 const Styles = {
-    text: {
-        borderWidth: StyleSheet.hairlineWidth,
-        borderColor: 'red'
-    },
-    textTitle: {
-        color: 'green'
-    },
-    password: {
-        borderColor: 'blue'
-    }
+
 }
