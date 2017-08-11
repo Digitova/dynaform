@@ -155,14 +155,10 @@ To specify how you want your form fields validated, DynaForm ships with a handfu
 }
 ```
 
-Validators can take arguments or be just place true/false functions. "required", for example, doesn't take arguments, so you write it just as:
+Validators can take arguments, but may not. For example `required` doesn't take arguments and is written as:
 
 ```javascript
 validators: ['required']
-```
-
-or, for short,
-
 ```
 
 Other validators need an argument to work, such as minimum or maximum lengths:
@@ -181,8 +177,6 @@ Validator types:
     maximum:<number>
     numeric
     range:<from>:<to>
-    email
-    phone-number
     regex:<expression>
 ```
 
