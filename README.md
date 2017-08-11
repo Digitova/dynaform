@@ -49,13 +49,11 @@ export default class App extends React.Component {
                 title: "First Name",
                 subtitle: "What yo name?",
                 helper: "Your first name, kind person!",
-                required: true
             },
             "lastName": {
                 dataType: "string",
                 elementType: "text",
                 title: "Last Name",
-                required: true,
             }
         }
     }
@@ -136,7 +134,6 @@ Example:
     title: "First Name",
     subtitle: "What yo name?",
     helper: "Your first name, kind person!",
-    required: true
 }
 ```
 
@@ -152,7 +149,6 @@ To specify how you want your form fields validated, DynaForm ships with a handfu
             dataType: "string",
             elementType: "text",
             title: 'First Name',
-            required: true,                         // Shorthand for validation: ['required']
             validation: ['required', 'minimum:6'],  // Forces this field to be at least 6 characters long
         },
     }
@@ -167,8 +163,6 @@ validators: ['required']
 
 or, for short,
 
-```javascript
-required: true,
 ```
 
 Other validators need an argument to work, such as minimum or maximum lengths:
