@@ -90,8 +90,6 @@ Each level of the schema requires an _elementType_ property. The _elementType_ p
 }
 ```
 
-Next we will detail the different element types and the available properties for each.
-
 ### elementType: "form"
 
 | Property   | Type       | Optional/Required? |
