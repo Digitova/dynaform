@@ -13,3 +13,7 @@ export default class extends Component {
         )
     }
 }
+
+const Styles = {
+
+}
