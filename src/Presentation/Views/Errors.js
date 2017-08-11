@@ -4,8 +4,8 @@ import Label from './Label'
 
 export default class extends Component {
     render() {
-	    const { styleObject, errors, associatedInputType } = this.props
-	    const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedInputType+'Title'] : {}]
+	    const { styleObject, errors, associatedElementType } = this.props
+	    const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedElementType+'Title'] : {}]
         return (
             <View>
                     {errors.map( (error, i) => <Label styles={mergedStyles} key={i}>{error}</Label>) }

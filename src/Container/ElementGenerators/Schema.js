@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import * as Inputs from "../../Presentation/Inputs"
-import * as InputGenerators from "./index"
+import * as Elements from "../../Presentation/Elements"
+import * as ElementGenerators from "./index"
 import * as Validators from "../../Validation/"
-const inputTypes = Object.assign({}, Inputs.default, InputGenerators.default)
+const elementTypes = Object.assign({}, Elements.default, ElementGenerators.default)
 
 export const EVENT_CHANGE = 'onChange',
              EVENT_BLUR   = 'onBlur',
@@ -108,7 +108,7 @@ export default class Schema extends Component {
     render() {
         const { schema, ...additionalProps } = this.props
 
-        const InputType = this.getInputType(schema)
+        const ElementType = this.getElementType(schema)
         const Template = this.getTemplate(schema)
         const errors = this.state.errors
 
@@ -117,8 +117,8 @@ export default class Schema extends Component {
                 {...additionalProps}
                 errors={errors}
                 onChange={this.onChangeHandler.bind(this)}
-                inputType={InputType}
-                inputTypeName={this.getNameOfInputType(schema)}
+                elementType={ElementType}
+                elementTypeName={this.getNameOfElementType(schema)}
                 schema={schema}
                 title={schema.title}
                 subtitle={schema.subtitle}
@@ -132,19 +132,19 @@ export default class Schema extends Component {
         return templates.Default
     }
 
-    getInputType(schema) {
-        return this.isSupportedInputType(schema.inputType, inputTypes)
-            ? inputTypes[schema.inputType]
-            : inputTypes.UnsupportedInput
+    getElementType(schema) {
+        return this.isSupportedElementType(schema.elementType, elementTypes)
+            ? elementTypes[schema.elementType]
+            : elementTypes.UnsupportedElement
     }
 
-    getNameOfInputType(schema){
-        return this.isSupportedInputType(schema.inputType, inputTypes)
-            ? schema.inputType
-            : 'unsupprotedInput'
+    getNameOfElementType(schema){
+        return this.isSupportedElementType(schema.elementType, elementTypes)
+            ? schema.elementType
+            : 'unsupportedElement'
     }
 
-    isSupportedInputType(inputName, inputs) {
-        return inputName in inputs
+    isSupportedElementType(elementName, elements) {
+        return elementName in elements
     }
 }

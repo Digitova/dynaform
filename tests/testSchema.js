@@ -1,9 +1,9 @@
 export const basic = {
-    inputType: "object",
-    properties: {
+    elementType: "form",
+    elements: {
         "firstName": {
             dataType: "string",
-	        inputType: "text",
+	        elementType: "text",
             placeholder: 'Please enter your first name',
             title: 'First Name',
             subtitle:'What yo name?',
@@ -12,26 +12,26 @@ export const basic = {
         },
         "lastName": {
             dataType: "string",
-            inputType: "text",
+	        elementType: "text",
             title: 'Last Name',
             required: true,
         },
 	    "password": {
         	dataType: 'string',
-		    inputType: 'password',
+		    elementType: 'password',
 		    title: 'Password'
 	    },
 	    "isAdmin":{
 		    dataType: 'boolean',
-		    inputType: "switch",
+		    elementType: "switch",
 		    title: 'Is Admin?',
 	    },
 	    "subForm": {
-		    inputType: "object",
-		    properties: {
+		    elementType: "form",
+		    elements: {
 			    "firstName": {
 				    dataType: "string",
-				    inputType: "text",
+				    elementType: "text",
 				    placeholder: 'Please enter your first name',
 				    title: 'First Name',
 				    subtitle:'What yo name?',
@@ -40,16 +40,16 @@ export const basic = {
 			    },
 			    "lastName": {
 				    dataType: "string",
-				    inputType: "text",
+				    elementType: "text",
 				    title: 'Last Name',
 				    required: true,
 			    },
 			    "subForm": {
-				    inputType: "object",
-				    properties: {
+				    elementType: "form",
+				    elements: {
 					    "firstName": {
 						    dataType: "string",
-						    inputType: "text",
+						    elementType: "text",
 						    placeholder: 'Please enter your first name',
 						    title: 'First Name',
 						    subtitle:'What yo name?',
@@ -58,7 +58,7 @@ export const basic = {
 					    },
 					    "lastName": {
 						    dataType: "string",
-						    inputType: "text",
+						    elementType: "text",
 						    title: 'Last Name',
 						    required: true,
 					    }
@@ -70,11 +70,11 @@ export const basic = {
 }
 
 export const advanced = {
-    inputType: "object",
-    properties: {
+	elementType: "form",
+    elements: {
         todos: {
-            inputType: "array",
-            properties: {
+	        elementType: "array",
+            elements: {
                 id: {
                     dataType: 'readOnly',
                     value: 'testst',

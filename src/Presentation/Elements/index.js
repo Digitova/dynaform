@@ -1,5 +1,13 @@
-export Errors from "./Errors"
-export Helper from "./Helper"
-export Label from "./Label"
-export Subtitle from "./Subtitle"
-export Title from "./Title"
+import Text from "./Text"
+import Password from "./Password"
+import Switch from "./Switch"
+import TextArea from './TextArea'
+import UnsupportedElement from "./UnsupportedElement"
+
+export default {
+    text: Text,
+    password: Password,
+    switch: Switch,
+    textArea:  TextArea,
+	UnsupportedElement
+}

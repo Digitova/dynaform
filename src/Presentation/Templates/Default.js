@@ -1,6 +1,6 @@
 import React from "react"
 import { View, StyleSheet } from "react-native"
-import { Title, Subtitle, Helper, Errors } from "../Elements"
+import { Title, Subtitle, Helper, Errors } from "../Views"
 
 export default class extends React.Component {
     render() {
@@ -9,12 +9,12 @@ export default class extends React.Component {
             errors
         } = this.props
 
-        const InputType = this.props.inputType
+        const ElementType = this.props.elementType
         return (
             <View style={Styles.View}>
                 {this.renderTitle()}
                 {this.renderSubtitle()}
-                <InputType {...this.props} />
+                <ElementType {...this.props} />
                 {this.renderHelper()}
                 {errors && errors.length > 0 ? <Errors styles={style} errors={errors} /> : false }
             </View>
@@ -24,7 +24,7 @@ export default class extends React.Component {
         if (this.props.title) {
             return (
                 <Title
-                    associatedInputType={this.props.inputTypeName}
+                    associatedElementType={this.props.elementTypeName}
                     styleObject={this.props.styleObject}
                 >
                     {this.props.title}
@@ -37,7 +37,7 @@ export default class extends React.Component {
         if (this.props.subtitle) {
             return (
                 <Subtitle
-                    associatedInputType={this.props.inputTypeName}
+                    associatedElementType={this.props.elementTypeName}
                     styleObject={this.props.styleObject}
                 >
                     {this.props.subtitle}
@@ -50,7 +50,7 @@ export default class extends React.Component {
         if (this.props.helper) {
             return (
                 <Helper
-                    associatedInputType={this.props.inputTypeName}
+                    associatedElementType={this.props.elementTypeName}
                     styleObject={this.props.styleObject}
                 >
                     {this.props.helper}

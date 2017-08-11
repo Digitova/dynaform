@@ -5,7 +5,7 @@ export default function UnsupportedInput({ schema }) {
     // XXX render json as string so dev can inspect faulty subschema
     return (
         <View>
-            <Text>Unsupported inputType:</Text>
+            <Text>Unsupported elementType:</Text>
             <Text>
                 {JSON.stringify(schema, null, 2)}
             </Text>

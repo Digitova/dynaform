@@ -5,14 +5,14 @@ import Schema from "./Schema"
 export default class extends Component {
     render() {
         const { schema, data, styleObject } = this.props
-        const properties = Object.keys(schema.properties)
+        const elements = Object.keys(schema.elements)
 
         return (
             <View>
-                {properties.map((name, index) => {
+                {elements.map((name, index) => {
                     return (
                         <Schema
-                            schema={schema.properties[name]}
+                            schema={schema.elements[name]}
                             data={data && data[name] ? data[name] : null}
                             key={index}
                             name={name}

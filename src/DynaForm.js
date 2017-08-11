@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Schema from "./Container/InputGenerators/Schema.js"
+import Schema from "./Container/ElementGenerators/Schema.js"
 import { Text, View } from "react-native"
 
 export default class extends Component {
