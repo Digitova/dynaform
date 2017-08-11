@@ -20,6 +20,7 @@ export default class extends Component {
         const newState = Object.assign({}, this.state)
         newState.data = data
         this.setState(newState)
+        this.props.onChange(this.state.data);
     }
 
     render() {
@@ -28,7 +29,7 @@ export default class extends Component {
             <View>
                 <Schema
                     schema={schema}
-                    data={typeof data == "object" ? data : {}}
+                    data={this.state.data}
                     onSubmit={this.onSubmitHandler}
                     onChange={this.onChange}
                     styleObject={styleObject}
