@@ -21,6 +21,11 @@ export const basic = {
 		    inputType: 'password',
 		    title: 'Password'
 	    },
+	    "isAdmin":{
+		    dataType: 'boolean',
+		    inputType: "switch",
+		    title: 'Is Admin?',
+	    },
 	    "subForm": {
 		    inputType: "object",
 		    properties: {

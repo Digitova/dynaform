@@ -82,7 +82,7 @@ export default class Schema extends Component {
         // on the schema type. E.g., props need to know what value to update,
         // so they get a (key, value); arrays need to the know index; but text
         // boxes just need to know the value.
-        const name = arguments[1] ? arguments[0] : null
+        const name = arguments[1] !== undefined ? arguments[0] : null
         const data = name ? arguments[1] : arguments[0]
 
         const newState = Object.assign({}, this.state)
