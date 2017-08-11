@@ -8,7 +8,7 @@ A simple React-Native component capable of building dynamic react-native forms o
 - [Usage](#usage)
 - [The schema](#the-schema)
 
-  - [Input types](#input-types)
+  - [Element types](#input-types)
 
 - [Form customization](#form-customization)
 
@@ -40,11 +40,11 @@ export default class App extends React.Component {
 
   render() {
     const schema = {
-        inputType: "object",
-        properties: {
+        elementType: "form",
+        elements: {
             "firstName": {
                 dataType: "string",
-                inputType: "text",
+                elementType: "text",
                 placeholder: "Please enter your first name",
                 title: "First Name",
                 subtitle: "What yo name?",
@@ -53,7 +53,7 @@ export default class App extends React.Component {
             },
             "lastName": {
                 dataType: "string",
-                inputType: "text",
+                elementType: "text",
                 title: "Last Name",
                 required: true,
             }
@@ -79,20 +79,20 @@ export default class App extends React.Component {
 
 The schema defines the structure, data types, and is used to customize the form.
 
-## Input Types
+## Element Types
 
-Each level of the schema requires an _inputType_ property. The _inputType_ property is a required field and describes the type of form input at this level of the schema.
+Each level of the schema requires an _elementType_ property. The _elementType_ property is a required field and describes the type of form input at this level of the schema.
 
 ```javascript
 {
-    inputType: "object | string | password | ..."
+    elementType: "object | string | password | ..."
     ...
 }
 ```
 
-Next we will detail the different input types and the available properties for each.
+Next we will detail the different element types and the available properties for each.
 
-### inputType: "object"
+### elementType: "form"
 
 | Property   | Type       | Optional/Required? |
 | ---------- | ---------- | ------------------ |
@@ -104,7 +104,7 @@ Example:
 ```javascript
 {
     title: "Login Form",
-    inputType: "object",
+    elementType: "form",
     properties: {
         "formElement1": {
             ...
@@ -116,7 +116,7 @@ Example:
 }
 ```
 
-### inputType: "text"
+### elementType: "text"
 
 | Property    | Type    | Optional/Required? |
 | ----------- | ------- | ------------------ |
@@ -132,7 +132,7 @@ Example:
 ```javascript
 
 "formElement1": {
-    inputType: "text",
+    elementType: "text",
     dataType: "string",
     placeholder: "Please enter your first name",
     title: "First Name",
@@ -148,11 +148,11 @@ To specify how you want your form fields validated, DynaForm ships with a handfu
 
 ```javascript
 {
-    inputType: "object",
+    elementType: "form",
     properties: {
         "email": {
             dataType: "string",
-            inputType: "text",
+            elementType: "text",
             title: 'First Name',
             required: true,                         // Shorthand for validation: ['required']
             validation: ['required', 'minimum:6'],  // Forces this field to be at least 6 characters long
