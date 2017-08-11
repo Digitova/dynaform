@@ -3,7 +3,7 @@ export const basic = {
     elements: {
         "firstName": {
             dataType: "string",
-	        elementType: "text",
+            elementType: "text",
             placeholder: 'Please enter your first name',
             title: 'FIRST NAME',
             subtitle:'What yo name?',
@@ -12,30 +12,78 @@ export const basic = {
         },
         "lastName": {
             dataType: "string",
-	        elementType: "text",
-            title: 'LAST NAME',
+            elementType: "text",
+            title: 'Last Name',
             required: true,
         },
-	    "password": {
-        	dataType: 'string',
-		    elementType: 'password',
-		    title: 'PASSWORD'
-	    },
-	    "isAdmin":{
-		    dataType: 'boolean',
-		    elementType: "switch",
-		    subtitle:'Is the user an Admin?',
-		    helper: 'If so mark it here',
-		    title: 'IS ADMIN?',
-	    }
+        "password": {
+            dataType: 'string',
+            elementType: 'password',
+            title: 'Password'
+        },
+        'pickles': {
+            dataType: 'string',
+            elementType: 'picker',
+            title: 'Pickle Selection',
+            items: {
+                dill: 'Dill Pickles',
+                egg: 'Pickled Egg',
+                bb: 'Bread & Butter',
+            }
+        },
+        "isAdmin":{
+            dataType: 'boolean',
+            elementType: "switch",
+            title: 'Is Admin?',
+        },
+        "subForm": {
+            elementType: "form",
+            elements: {
+                "firstName": {
+                    dataType: "string",
+                    elementType: "text",
+                    placeholder: 'Please enter your first name',
+                    title: 'First Name',
+                    subtitle:'What yo name?',
+                    helper: 'Your first name, kind person!',
+                    required: true
+                },
+                "lastName": {
+                    dataType: "string",
+                    elementType: "text",
+                    title: 'Last Name',
+                    required: true,
+                },
+                "subForm": {
+                    elementType: "form",
+                    elements: {
+                        "firstName": {
+                            dataType: "string",
+                            elementType: "text",
+                            placeholder: 'Please enter your first name',
+                            title: 'First Name',
+                            subtitle:'What yo name?',
+                            helper: 'Your first name, kind person!',
+                            required: true
+                        },
+                        "lastName": {
+                            dataType: "string",
+                            elementType: "text",
+                            title: 'Last Name',
+                            required: true,
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 export const advanced = {
-	elementType: "form",
+    elementType: "form",
     elements: {
         todos: {
-	        elementType: "array",
+            elementType: "array",
             elements: {
                 id: {
                     dataType: 'readOnly',
