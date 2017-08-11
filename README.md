@@ -34,7 +34,7 @@ Create the
 
 ```
 import React from 'react';
-import DynaForm from './src/DynaForm.js'
+import DynaForm from 'react-native-dynaform'
 import schema from './schema/schema.js'
 
 export default class App extends React.Component {
@@ -95,10 +95,10 @@ Next we will detail the different input types and the available properties for e
 
 ### inputType: "object"
 
-Property   | Type       | Optional/Required?
----------- | ---------- | ------------------
-title      | string     | optional
-properties | jsonObject | required
+| Property   | Type       | Optional/Required? |
+| ---------- | ---------- | ------------------ |
+| title      | string     | optional           |
+| properties | jsonObject | required           |
 
 Example:
 
@@ -119,14 +119,14 @@ Example:
 
 ### inputType: "text"
 
-Property    | Type    | Optional/Required?
------------ | ------- | ------------------
-dataType    | string  | required
-title       | string  | optional
-placeholder | string  | optional
-subtitle    | string  | optional
-helper      | string  | optional
-required    | boolean | optional
+| Property    | Type    | Optional/Required? |
+| ----------- | ------- | ------------------ |
+| dataType    | string  | required           |
+| title       | string  | optional           |
+| placeholder | string  | optional           |
+| subtitle    | string  | optional           |
+| helper      | string  | optional           |
+| required    | boolean | optional           |
 
 Example:
 
