@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { View, Text } from "react-native"
+import { ScrollView, Text } from "react-native"
 import Schema from "./Schema"
 
 export default class extends Component {
@@ -8,7 +8,7 @@ export default class extends Component {
         const elements = Object.keys(schema.elements)
 
         return (
-            <View>
+            <ScrollView>
                 {elements.map((name, index) => {
                     return (
                         <Schema
@@ -21,7 +21,7 @@ export default class extends Component {
                         />
                     )
                 })}
-            </View>
+            </ScrollView>
         )
     }
 }
