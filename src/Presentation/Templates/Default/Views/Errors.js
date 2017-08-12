@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import {View, Text } from "react-native"
-import Label from './Label'
 
 export default class extends Component {
     render() {
@@ -8,7 +7,7 @@ export default class extends Component {
 	    const mergedStyles = [Styles.Errors, styleObject ? styleObject[associatedElementType+'Errors'] : {}]
         return (
             <View style={{flex: 1, alignItems: 'flex-end'}}>
-                    {errors.map( (error, i) => <Label style={mergedStyles} key={i}>{error}</Label>) }
+                    {errors.map( (error, i) => <Text style={mergedStyles} key={i}>{error}</Text>) }
             </View>
         )
     }

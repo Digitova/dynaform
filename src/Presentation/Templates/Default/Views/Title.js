@@ -1,15 +1,14 @@
 import React, { Component } from "react"
-import { StyleSheet } from "react-native"
-import Label from "./Label"
+import { Text, StyleSheet } from "react-native"
 
 export default class Title extends Component {
     render() {
         const { styleObject, associatedElementType } = this.props
         const mergedStyles = [Styles.Title, styleObject ? styleObject[associatedElementType+'Title'] : {}]
         return (
-            <Label style={mergedStyles}>
+            <Text style={mergedStyles}>
                 {this.props.children}
-            </Label>
+            </Text>
         )
     }
 }

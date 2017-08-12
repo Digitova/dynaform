@@ -1,15 +1,14 @@
 import React from "react"
-import { View, StyleSheet } from "react-native"
-import Label from "./Label"
+import { Text, View, StyleSheet } from "react-native"
 
 export default class extends React.Component {
     render() {
         const { style } = this.props
 
         return (
-            <Label style={Styles.Subtitle}>
+            <Text style={Styles.Subtitle}>
                 {this.props.children}
-            </Label>
+            </Text>
         )
     }
 }
