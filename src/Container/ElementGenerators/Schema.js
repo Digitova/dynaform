@@ -123,6 +123,7 @@ export default class Schema extends Component {
                 title={schema.title}
                 subtitle={schema.subtitle}
                 helper={schema.helper}
+                placeholder={schema.placeholder}
             />
         )
     }

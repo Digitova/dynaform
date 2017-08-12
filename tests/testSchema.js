@@ -7,7 +7,6 @@ export const basic = {
             placeholder: 'Please enter your first name',
             title: 'FIRST NAME',
             subtitle:'What yo name?',
-            helper: 'Your first name, kind person!',
             required: true
         },
         "lastName": {

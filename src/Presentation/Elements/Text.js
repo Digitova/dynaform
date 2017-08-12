@@ -39,7 +39,7 @@ const Styles = StyleSheet.create({
         height: 40,
         borderColor: "#999",
         paddingHorizontal: 10,
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
     },
     ErrorText: {
         borderColor: "#dd4444"
