@@ -4,22 +4,29 @@ export const basic = {
 		{
 			header: "PROFILE INFORMATION",
 			elements: {
-				"firstName": {
+				"name": {
 					dataType: "string",
-					templateType: "inline",
 					elementType: "text",
-					title: 'First Name',
-					subtitle: 'What is the user\'s First Name?',
-					placeholder: 'Christopher',
+					templateType: "inline",
+					title: 'Name',
+					subtitle: 'What is the user\'s Name?',
+					placeholder: 'John Doe',
 					required: true
 				},
-				"lastName": {
+				"email": {
 					dataType: "string",
 					elementType: "text",
 					templateType: "inline",
-					title: 'Last Name',
-					subtitle: 'What is the user\'s Last Name?',
-					placeholder: 'Rathgeb',
+					title: 'Email',
+					placeholder: 'john.doe@dynaform.com',
+					required: true,
+				},
+				"password": {
+					dataType: "string",
+					elementType: "password",
+					templateType: "inline",
+					title: 'Password',
+					placeholder: '************',
 					required: true,
 				}
 			}

@@ -19,6 +19,6 @@ const Styles = StyleSheet.create({
         fontWeight: '700',
         color: "#666",
         paddingHorizontal: 10,
-        marginTop: 20
+        marginTop: 20,
     }
 })

@@ -76,5 +76,6 @@ const Styles = StyleSheet.create({
 	    backgroundColor: "#fff",
 	    borderTopWidth: StyleSheet.hairlineWidth,
 	    borderBottomWidth: StyleSheet.hairlineWidth,
+	    marginBottom: -1,
     },
 })
