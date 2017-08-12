@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import * as Elements from "../../Presentation/Elements"
 import * as ElementGenerators from "./index"
+import * as Templates from "../../Presentation/Templates"
 import * as Validators from "../../Validation/"
 const elementTypes = Object.assign({}, Elements.default, ElementGenerators.default)
+const templateTypes = Templates.default
 
 export const EVENT_CHANGE = 'onChange',
              EVENT_BLUR   = 'onBlur',
@@ -130,8 +132,20 @@ export default class Schema extends Component {
 
     getTemplate(schema) {
         const templates = require("../../Presentation/Templates").default
-        return templates.Default
+
+        return this.getTemplateType(schema);
     }
+
+    getTemplateType(schema){
+
+	    return this.isSupportedTemplateType(schema.templateType, templateTypes)
+		    ? templateTypes[schema.templateType]
+		    : templateTypes.Default
+    }
+
+	isSupportedTemplateType(templateName, templates) {
+		return templateName in templates
+	}
 
     getElementType(schema) {
         return this.isSupportedElementType(schema.elementType, elementTypes)

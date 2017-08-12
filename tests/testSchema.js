@@ -1,40 +1,60 @@
 export const basic = {
+	title: 'PROFILE INFORMATION',
     elementType: "form",
     elements: {
         "firstName": {
             dataType: "string",
+	        templateType: "inline",
             elementType: "text",
-            placeholder: 'First Name',
+	        title: 'First Name',
+	        subtitle: 'What is the user\'s First Name?',
+            placeholder: 'Christopher',
             required: true
         },
         "lastName": {
             dataType: "string",
             elementType: "text",
-	        placeholder: "Last Name",
+	        title: 'Last Name',
+	        subtitle: 'What is the user\'s Last Name?',
+	        placeholder: 'First Name',
             required: true,
         },
+	    "email": {
+		    dataType: "string",
+		    elementType: "text",
+		    title: "LOGIN INFORMATION",
+		    placeholder: "E-Mail Address",
+		    required: true,
+	    },
         "password": {
             dataType: 'string',
             elementType: 'password',
 	        placeholder: 'Password',
-            title: 'Password',
-	        subtitle:'(strict)'
-        },
-        'pickles': {
-            dataType: 'string',
-            elementType: 'picker',
-            title: 'Pickle Selection',
-            items: {
-                dill: 'Dill Pickles',
-                egg: 'Pickled Egg',
-                bb: 'Bread & Butter',
-            }
         },
         "isAdmin":{
             dataType: 'boolean',
             elementType: "switch",
-            title: 'Is Admin?',
+	        templateType: "inline",
+	        title: "Admin User",
+	        subtitle: "Is this user an Admin?",
         },
+	    "isActive":{
+		    dataType: 'boolean',
+		    elementType: "switch",
+		    templateType: "inline",
+		    title: "Active User",
+		    subtitle: "Is this an active user?",
+	    },
+	    'pickles': {
+		    dataType: 'string',
+		    elementType: 'picker',
+		    title: 'Pickle Selection',
+		    items: {
+			    dill: 'Dill Pickles',
+			    egg: 'Pickled Egg',
+			    bb: 'Bread & Butter',
+		    }
+	    },
         "subForm": {
             elementType: "form",
             elements: {

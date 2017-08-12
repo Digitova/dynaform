@@ -1,6 +1,6 @@
 import React from "react"
 import { View, StyleSheet } from "react-native"
-import { Title, Subtitle, Helper, Errors } from "../Views"
+import { Title, Subtitle, Helper, Errors } from "./Views"
 
 export default class extends React.Component {
     render() {
@@ -11,13 +11,17 @@ export default class extends React.Component {
 
         const ElementType = this.props.elementType
         return (
-            <View style={Styles.View}>
-                {this.renderTitle()}
-                {this.renderSubtitle()}
-                <ElementType {...this.props} />
-                {this.renderHelper()}
-                {errors && errors.length > 0 ? <Errors styles={style} errors={errors} /> : false }
-            </View>
+        	<View>
+	            <View style={Styles.View}>
+		            <View>
+		                {this.renderTitle()}
+		                {this.renderSubtitle()}
+		            </View>
+	                <ElementType {...this.props} />
+	            </View>
+			    {this.renderHelper()}
+			    {errors && errors.length > 0 ? <Errors styles={style} errors={errors} /> : false }
+	        </View>
         )
     }
     renderTitle() {
@@ -63,6 +67,14 @@ export default class extends React.Component {
 
 const Styles = StyleSheet.create({
     View: {
-
-    }
+	    flex: 1,
+	    flexDirection: 'row',
+	    justifyContent: 'space-between',
+	    alignItems: 'center',
+	    padding: 10,
+	    height: 40,
+	    backgroundColor: "#fff",
+	    borderTopWidth: StyleSheet.hairlineWidth,
+	    borderBottomWidth: StyleSheet.hairlineWidth,
+    },
 })

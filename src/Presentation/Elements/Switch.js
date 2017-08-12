@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Switch, StyleSheet } from "react-native"
+import { View, Text, Switch, StyleSheet } from "react-native"
 
 export default class extends Component {
     render() {
@@ -19,16 +19,16 @@ export default class extends Component {
 
 
 	    return (
-            <Switch
-                name={name}
-                style={[Styles.Switch, styleObject ? styleObject['switch'] : {}]}
-                value={data ? data : false}
-                disabled={!!disabled}
-                onValueChange={onChange}
-                {...additionalProps}
-                onSubmitEditing={onSubmit}
-                underlineColorAndroid="rgba(0,0,0,0)"
-            />
+	            <Switch
+	                name={name}
+	                style={[Styles.Switch, styleObject ? styleObject['switch'] : {}]}
+	                value={data ? data : false}
+	                disabled={!!disabled}
+	                onValueChange={onChange}
+	                {...additionalProps}
+	                onSubmitEditing={onSubmit}
+	                underlineColorAndroid="rgba(0,0,0,0)"
+	            />
         )
     }
 }
@@ -37,7 +37,8 @@ const Styles = StyleSheet.create({
 	Switch: {
 		height: 40,
 		marginLeft: 10,
-		marginRight: 10,
-		paddingHorizontal: 5
-	}
+		paddingHorizontal: 5,
+		marginTop: 10
+	},
+
 })
