@@ -4,21 +4,21 @@ export const basic = {
         "firstName": {
             dataType: "string",
             elementType: "text",
-            placeholder: 'Please enter your first name',
-            title: 'FIRST NAME',
-            subtitle:'What yo name?',
+            placeholder: 'First Name',
             required: true
         },
         "lastName": {
             dataType: "string",
             elementType: "text",
-            title: 'Last Name',
+	        placeholder: "Last Name",
             required: true,
         },
         "password": {
             dataType: 'string',
             elementType: 'password',
-            title: 'Password'
+	        placeholder: 'Password',
+            title: 'Password',
+	        subtitle:'(strict)'
         },
         'pickles': {
             dataType: 'string',
