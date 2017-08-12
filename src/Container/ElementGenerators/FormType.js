@@ -13,7 +13,7 @@ export default class extends Component {
 
 	                const elements = Object.keys(section.elements)
 
-                    return (<View key={index} style={{marginBottom: schema.sectionSpacing}}>
+                    return (<View key={index} style={{flex: 1, marginBottom: schema.sectionSpacing > 0 ? schema.sectionSpacing: 1}}>
                                 {this.renderHeader(section.header)}
 	                            {this.renderSubheader(section.subheader)}
                                 {elements.map((elementName, elementIndex) => {
