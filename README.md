@@ -26,14 +26,12 @@ $ npm install react-native-dynaform --save
 
 # Usage
 
-The whole purpose of this component is to enable dynamic form creation via a JSON schema.
+DynaForm allows you to turn JSON configuration into forms. These forms can be styled, can be validated, and return (via callback) a JSON object in a tree resembling the configuration you passed.
 
-Create the
-
-<dynaform> object and pass it the schema and optionally a default state.</dynaform>
+Create the `<DynaForm>` object and pass it the schema and (optional) a default state.
 
 ```javascript
-import React from 'react';
+import React from 'react'
 import DynaForm from 'react-native-dynaform'
 
 export default class App extends React.Component {
@@ -75,11 +73,11 @@ export default class App extends React.Component {
 
 # The schema
 
-The schema defines the structure, data types, and is used to customize the form.
+The schema defines the form structure, return datatypes, validations, and any styling customizations you wish to make.
 
 ## Element Types
 
-Each level of the schema requires an _elementType_ property. The _elementType_ property is a required field and describes the type of form input at this level of the schema.
+Each level of the schema requires an `elementType` property. The `elementType` property is a required field that describes the type of form input at this level of the schema. It is entirely a presentational attribute used to field user input.
 
 ```javascript
 {
@@ -90,10 +88,10 @@ Each level of the schema requires an _elementType_ property. The _elementType_ p
 
 ### elementType: "form"
 
-| Property   | Type       | Optional/Required? |
-| ---------- | ---------- | ------------------ |
-| title      | string     | optional           |
-| properties | jsonObject | required           |
+Property   | Type       | Optional/Required?
+---------- | ---------- | ------------------
+title      | string     | optional
+properties | jsonObject | required
 
 Example:
 
@@ -114,14 +112,14 @@ Example:
 
 ### elementType: "text"
 
-| Property    | Type    | Optional/Required? |
-| ----------- | ------- | ------------------ |
-| dataType    | string  | required           |
-| title       | string  | optional           |
-| placeholder | string  | optional           |
-| subtitle    | string  | optional           |
-| helper      | string  | optional           |
-| required    | boolean | optional           |
+Property    | Type    | Optional/Required?
+----------- | ------- | ------------------
+dataType    | string  | required
+title       | string  | optional
+placeholder | string  | optional
+subtitle    | string  | optional
+helper      | string  | optional
+required    | boolean | optional
 
 Example:
 
@@ -137,6 +135,83 @@ Example:
 }
 ```
 
+### elementType: "password"
+
+Property    | Type    | Optional/Required?
+----------- | ------- | ------------------
+dataType    | string  | required
+title       | string  | optional
+placeholder | string  | optional
+subtitle    | string  | optional
+helper      | string  | optional
+required    | boolean | optional
+
+Passwords are text fields, so take all the variables of the text elementType. The only difference is the input is masked like a password field.
+
+### elementType: "switch"
+
+Property | Type    | Optional/Required?
+-------- | ------- | ------------------
+dataType | string  | required
+title    | string  | required
+subtitle | string  | optional
+helper   | string  | optional
+required | boolean | optional
+
+A (typically boolean) native Switch element (like a checkbox).
+
+Example:
+
+```javascript
+
+"sendMeEmail": {
+    elementType: "switch",
+    dataType: "boolean",
+    title: "Send me email",
+    subtitle: "Do you want to receive marketing emails?",
+}
+```
+
+### elementType: "picker"
+
+Property    | Type    | Optional/Required?
+----------- | ------- | ------------------
+dataType    | string  | required
+items       | mixed   | required
+title       | string  | optional
+placeholder | string  | optional
+subtitle    | string  | optional
+helper      | string  | optional
+required    | boolean | optional
+
+Pickers are multiple select form fields where you can insert the values. To define the field items, define `items` as either an array (where the elements are the item keys and values) or an object, where object properties are keys, and the property value is its value.
+
+Example:
+
+```javascript
+country: {
+    elementType: 'picker',
+    title: 'Country',
+    helper: 'Your country of origin.',
+    items: ['Argentina', 'Peru', 'USA'],
+}
+
+// This also works. Users will see the proper names, and when the country is
+// selected, it passes back the property name. So, for example, when a customer
+// selects "Argentina", the form passes back "ag" as the selection.
+
+country: {
+    elementType: 'picker',
+    title: 'Country',
+    helper: 'Your country of origin.',
+    items: {
+        ar: 'Argentina',
+        pe: 'Peru',
+        us: 'USA',
+    }
+}
+```
+
 ## Form data validation
 
 To specify how you want your form fields validated, DynaForm ships with a handful of built-in, ready to roll validators. Attach your validators to your field properties like so:
@@ -149,7 +224,8 @@ To specify how you want your form fields validated, DynaForm ships with a handfu
             dataType: "string",
             elementType: "text",
             title: 'First Name',
-            validation: ['required', 'minimum:6'],  // Forces this field to be at least 6 characters long
+            // Forces this field to be at least 6 characters long
+            validation: ['required', 'minimum:6'],
         },
     }
 }
@@ -204,8 +280,6 @@ const garfield = (input) => {
 }
 ```
 
-
-
 ### Custome Styling
 
-*styling info here*
+_styling info here_
